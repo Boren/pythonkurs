@@ -91,7 +91,11 @@ Start med å skrive følgende inn i ruten som er markert `In [ ]:`
 print("Hei verden!")
 ```
 
-Deretter kan du klikke på knappen `Run` _SETT INN BILDE_.
+Deretter kan du klikke på knappen `Run` 
+![Run]
+
+[Run]:./images/RunButton.png
+
 Kodesnutten du har skrevet inn blir nå kjørt og resultatet vil vises nedenfor ruten.
 
 `Hei verden!`
@@ -222,7 +226,7 @@ print(byer)
 
 `['Oslo', 'Stockholm', 'Wien', 'Berlin']`
 
-Dette gir og muligheten for å enkelt fjerne eller legge til byer i listen.
+Dette gir og muligheten for enkelt å fjerne eller legge til byer i listen. Det kan gjøres ved hjelp noen listefunksjoner som er innebygd i Python.
 
 ```python
 byer.append("Trondheim")
@@ -240,7 +244,7 @@ len(byer)
 
 `4`
 
-Sortering kan og gjøres kjapt ved å skrive følgende
+Sortering kan gjøres kjapt ved bruk av funksjonen ```.sort() ```. Så vi må skrive følgende
 
 ```python
 byer.sort()
@@ -248,6 +252,8 @@ print(byer)
 ```
 
 `['Berlin', 'Stockholm', 'Trondheim', 'Wien']`
+
+_En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall blir sortert i stigende rekkefølge. ```.sort()``` vil ikke fungere i lister som er blandet._
 
 ### Betingelser
 
@@ -369,7 +375,7 @@ Vi har jukset litt og forhåndlags en liten funksjon som tar seg av arbeidet.
 ```python
 lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
 print((lengdegrad, breddegrad))
-**TODO** Sjekk at print stemmer
+##TODO Sjekk at print stemmer
 ```
 
 Revers geokoding er og mulig:
