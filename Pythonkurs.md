@@ -12,7 +12,7 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 
 ## Kursoversikt
 
-### 1. Introduksjon til Python og miljøet (1 timer)
+### 1. Introduksjon til Python og miljøet (1 time)
 
 - Jupyter
   Hva er jupyter notebooks? Hvilke fordeler gir det meg? Hvordan brukes de?
@@ -64,7 +64,7 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 
 ---
 
-## Introduksjon til Python og miljøet
+## Introduksjon til Python og Jupytermiljøet
 
 5 gode grunner til å bruke Python i GIS-hverdagen din:
 
@@ -74,31 +74,64 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 - Støttet av de fleste store GIS verktøy
 - Python passerte nylig Java i popularitet og er nå #1
 
+(Vise noen bruksområder for Python i vår hverdag?)
+
 ## Jupyter Notebooks
 
-Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort.
+Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort. Det finnes flere måter å kjøre Jupyter Notebooks på. 
+
+I dette kurset skal vi bruke **Google Colaboratory**.
 
 ### Oppgave
 
-- Klikk deg inn på [https://dennelinkenmåendres/](https://dennelinkenmåendres/)
-- Finn mappen med navnet ditt og klikk deg inn
-- Klikk deretter filen med navn `1 Hei verden!`
+- Gå til https://colab.research.google.com/notebooks/welcome.ipynb
+- Trykk deg inn på _File_ > _New Python 3 Notebook_
 
 Python inneholder det aller meste av basis funksjonalitet uten at du trenger gjøre noe særlig mer.
-Start med å skrive følgende inn i ruten som er markert `In [ ]:`
+Start med å skrive følgende inn i linjen som er markert.
 
 ```python
 print("Hei verden!")
 ```
 
-Deretter kan du klikke på knappen `Run` 
+Deretter kan du klikke på knappen `Run cell`, eller trykke _Ctrl+Enter_.
 ![Run]
 
-[Run]:./images/RunButton.png
+[Run]:./images/Runcapture.JPG
 
 Kodesnutten du har skrevet inn blir nå kjørt og resultatet vil vises nedenfor ruten.
 
 `Hei verden!`
+
+**TODO**
+Hvordan tolkes Python koden? Hva er celler i Notebooks? Hva skjer dersom jeg kjører en celle? Har rekkefølgen noe å si? Hva er fordelen med celler kontra et langt script?
+Vise _Runtime_ > _Run All_. Forklare forskjell på _Runtime_ > _Run All_ vs. _Runtime_ > _Restart and Run All_
+Celler lar oss enkelt teste små deler av koden, i stedet for å kjøre alt hver gang (stor fordel med tanke på debug, learning-by-doing). 
+
+Syntax Errors i Notebooks (spesielt Google Colaborator)
+
+![SyntaxError]
+
+[SyntaxError]:./images/Error.JPG
+
+Kommer direkte med en knapp til _Stack Overflow_ (fungerer ikke som den skal akkurat nå?)
+I dette tilfellet vil løsningen vil være å bruke 
+```python
+print("""Hei 
+verden!""")
+```
+```
+Hei
+verden!
+```
+
+
+ i stedet. 
+ Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
+
+ Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
+ https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq
+ Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
 
 ---
 
@@ -124,7 +157,7 @@ Legg inn en `print``i samme rute slik at vi kan se hva verdien av variabelen er:
 
 ```python
 navn = "Fredrik"
-print(name)
+print(navn)
 ```
 
 Nå skal navnet ditt vises under ruten.
@@ -255,6 +288,8 @@ print(byer)
 
 _En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall blir sortert i stigende rekkefølge. ```.sort()``` vil ikke fungere i lister som er blandet._
 
+**TODO** Indexer i lister, hente spesifikke elementer
+
 ### Betingelser
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.5 Betingelser`_
@@ -274,7 +309,7 @@ Dersom den ikke finnes:
   print("Du har ikke besøkt byen")
 ```
 
-I python er det veldig lett å oversette en slik setning til kode. Det kan også være anbefalt å først skrive utsagnet i klartekst for så å gjøre det om til kode.
+I Python er det veldig lett å oversette en slik setning til kode. Det kan også være anbefalt å først skrive utsagnet i klartekst for så å gjøre det om til kode.
 
 ```python
 by = "Oslo"
@@ -291,6 +326,15 @@ Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se 
 
 **TODO**
 Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
+I Python, på lik linje med mange andre programmeringspråk, kan man importere biblioteker som andre har laget. Dette er diverse funksjonaliteter som du kan importere, og dermed ikke må skrive selv. Python har en rekke predefinerte bibliotek, som enkelt kan brukes ved å legge til en linje øverst i cellen.
+F.eks:
+```python
+from math import pi
+```
+Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math**_. For å importere all funksjonalitet fra et bibliotek på en gang kan man bruke
+```python
+from math import *
+```
 
 ### Bruk av forhåndlagde funksjoner
 
