@@ -1,4 +1,0 @@
-folium
-jupyter
-matplotlib
-shapely
