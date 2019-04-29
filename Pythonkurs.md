@@ -28,6 +28,12 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 - Datatyper
   Forskjellen mellom datatyper
 
+- Aritmetikk
+  Enkle beregninger i Python
+
+- Bruk av forhåndlagde og innebygde funksjoner
+  Fordeler. Hvordan bruke.
+
 - Lister
   Hva er lister? Hvordan bruke dem? Hvilke fordeler gir det å lagre verdier i lister?
 
@@ -37,8 +43,7 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 - Imports?
   Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
 
-- Bruk av forhåndlagde funksjoner
-  Fordeler. Hvordan bruke.
+
 
 ### 3. Geometri (2 timer)
 
@@ -132,6 +137,7 @@ Kommer direkte med en knapp til _Stack Overflow_ (fungerer ikke som den skal akk
 Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
 
 **Oppgave 1.1**
+
 Skriv `Hei Verden!` på to linjer.
 <details><summary>Løsning Oppgave 1.1</summary>
 <p>
@@ -187,6 +193,7 @@ print(navn)
 Nå skal navnet ditt vises under ruten.
 
 **Oppgave 2.1**
+
 Lag to variabler med ditt _fornavn_ og _etternavn_. Print disse på to linjer.
 <details><summary>Løsning Oppgave 2.1</summary>
 <p>
@@ -209,26 +216,30 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 Programmeringsspråk skiller mellom forskjellige typer data.
 Hovedtypene som blir brukt i python er:
 
-- Tekst
+- Tekststreng
   - Navn (Fredrik)
   - Steder (Oslo)
-  - Stjernetegn (Skytten)
 - Heltall
   - Alder (25)
   - Årstall (2019)
 - Flyttall
-  - Breddegrad (59.2345) _ENDRE_
-  - Lengdegrad (6.2335) _ENDRE_
+  - Høyde (1.75)
+- Boolean
+  - _True_ | _False_
 
 Python er som regel smart nok til å vite hvilken datatype som er riktig basert på innholdet.
 
 La oss legge inn noen flere variabler som bruker noen av disse datatypene.
 
-- `alder` skal inneholde din alder
-- `årstall` skal inneholde året vi er
-- `høyde` skal inneholde høyde
+**Oppgave 2.2**
 
-For meg blir det slik:
+Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
+- `navn` skal inneholder ditt navn som tekststreng
+- `alder` skal inneholde din alder som heltall
+- `årstall` skal inneholde året vi er i som heltall
+- `høyde` skal inneholde din høyde som flyttall
+<details><summary>Løsning Oppgave 2.2</summary>
+<p>
 
 ```python
 navn = "Fredrik"
@@ -237,8 +248,13 @@ alder = 25
 høyde = 1.75
 ```
 
+</p>
+</details>
+
+---
+
 Legg merke til at tekst blir skrevet med anførselstegn mens tall blir skrevet uten.
-Det er for eksempel mulig å lagre tall som tekst hvis det skrives i anførselstegn: `tall_som_tekst = "15"`.
+Det er for eksempel mulig å lagre tall som tekst hvis det skrives i anførselstegn: `tall_som_tekst = "15"`. Hvorfor er det viktig å lagre variabler med riktig datatype?
 
 ### Aritmetikk
 
@@ -255,7 +271,16 @@ Lag en ny rute og skriv inn følgende:
 ```
 
 Trykk deretter run. Resultatet av kalkulasjonen vises nå under ruta.
-Erstatt `+` med `-` (subtrasjon), `*` (multiplikasjon) og `/` (divisjon) og se hvordan resultatet endrer seg.
+Symbolene i Python for de vanligste operasjonene er (Arithmetic Operators):
+
+- `+` - Addisjon
+- `-` - Subtraksjon
+- `*` - Multiplikasjon
+- `/` - Divisjon
+- `**`- Potens
+- `%` - Modulo
+
+Bytt gjerne regneart i eksemplet og se hvordan resultatet endrer seg.
 
 Resultatet av en kalkulasjon kan og lagres i en variabel slik at du kan bruke den senere.
 Du kan for eksempel regne ut årstallet du ble født i på følgende måte:
@@ -270,6 +295,49 @@ print(fødselsår)
 Det er ikke sikkert resultat av denne stemmer siden den ikke bruker full dato.
 
 Prøv nå å regne ut hvor mange centimeter du mangler for å bli 2 meter.
+
+**TODO**
+Oppgave 2.3
+
+---
+
+### Bruk av forhåndlagde og innebygde funksjoner
+
+**TODO**
+Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk. Enhver funksjon vil alltid ha en input og en output. Python har massevis av innebygde funksjoner, som hjelper deg med enkel funksjonalitet. Noen viktige eksempler:
+- `print()`
+  Tar en variabel som input, og printer og dette til output
+- `str()`
+  Gjør om et tall til en tekststreng
+- `int()`
+  Gjør om en tekststreng til et heltall
+- `len()`
+  Gir deg lengden på variabelen du sender inn
+
+
+Fordeler. Hvordan bruke.
+For eksempel str(), int(), print(),
+
+**Oppgave 2.4**
+
+Print `Året er: 2019` ved å:
+1. Lage en tekststreng variabel ("Året er: ")
+2. Gjøre om årstallet fra Oppgave 2.2 til en tekststreng
+3. Legge sammen strengene, og printe disse
+<details><summary>Løsning Oppgave 2.4</summary>
+<p>
+
+```python
+årstall = 2019
+tekststreng = "Året er: "
+årstallstreng = str(årstall)
+print(tekststreng + årstallstreng)
+```
+
+</p>
+</details>
+
+---
 
 ### Lister
 
@@ -376,10 +444,7 @@ Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math
 from math import *
 ```
 
-### Bruk av forhåndlagde funksjoner
 
-**TODO**
-Fordeler. Hvordan bruke.
 
 ---
 
