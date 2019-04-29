@@ -15,56 +15,69 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 ### 1. Introduksjon til Python og miljøet (1 time)
 
 - Jupyter
+  
   Hva er jupyter notebooks? Hvilke fordeler gir det meg? Hvordan brukes de?
 
 - “Hello World!”
+  
   Testkjøring av enkelt script og forklaring av hvordan python fungerer og tolker koden
 
 ### 2. Programmeringskonsepter (2+ timer)
 
 - Variabler
+  
   Hva er variabler? Hvordan bruke dem? Hvorfor bruke dem?
 
 - Datatyper
+  
   Forskjellen mellom datatyper
 
 - Aritmetikk
+  
   Enkle beregninger i Python
 
 - Bruk av forhåndlagde og innebygde funksjoner
+  
   Fordeler. Hvordan bruke.
 
 - Lister
+  
   Hva er lister? Hvordan bruke dem? Hvilke fordeler gir det å lagre verdier i lister?
 
 - Betingelser
+  
   I all hovedsak enkle «if», «and» og «or».
 
-- Imports?
+- Imports
+  
   Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
-
-
 
 ### 3. Geometri (2 timer)
 
 - Punkter
+  
   Hvordan lage punkter og vise de i et plot.
 
 - Kalkulering av distanse mellom punkter
+  
   Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
 
 - Polygoner
+  
   Lage polygoner som består av flere punkter og vise de i plot.
 
 ### 4. Kart med OpenStreetMap (3 timer)
 
 - Geokoding
+  
   Geokoding ved hjelp av webtjenester.
 
 - Dynamiske kart med Folium
+  
   Hvordan vise et kart.
 
 - Markers
+  
   Legge inn punkter i kartet og vise dem.
 
 ---
@@ -87,7 +100,7 @@ Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren 
 
 I dette kurset skal vi bruke **Google Colaboratory**.
 
-### Oppgave
+### Opprett eget Jupytermiljø
 
 - Gå til https://colab.research.google.com/notebooks/welcome.ipynb
 - Trykk deg inn på _File_ > _New Python 3 Notebook_
@@ -217,8 +230,8 @@ Programmeringsspråk skiller mellom forskjellige typer data.
 Hovedtypene som blir brukt i python er:
 
 - Tekststreng
-  - Navn (Fredrik)
-  - Steder (Oslo)
+  - Navn ("Fredrik")
+  - Steder ("Oslo")
 - Heltall
   - Alder (25)
   - Årstall (2019)
@@ -229,13 +242,16 @@ Hovedtypene som blir brukt i python er:
 
 Python er som regel smart nok til å vite hvilken datatype som er riktig basert på innholdet.
 
+Legg merke til at tekst blir skrevet med anførselstegn mens tall blir skrevet uten.
+Det er for eksempel mulig å lagre tall som tekst hvis det skrives i anførselstegn: `tall_som_tekst = "15"`. Hvorfor er det viktig å lagre variabler med riktig datatype?
+
 La oss legge inn noen flere variabler som bruker noen av disse datatypene.
 
 **Oppgave 2.2**
 
 Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
 - `navn` skal inneholder ditt navn som tekststreng
-- `alder` skal inneholde din alder som heltall
+- `fødselsår` skal inneholde året du ble født som heltall
 - `årstall` skal inneholde året vi er i som heltall
 - `høyde` skal inneholde din høyde som flyttall
 <details><summary>Løsning Oppgave 2.2</summary>
@@ -243,7 +259,7 @@ Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
 
 ```python
 navn = "Fredrik"
-alder = 25
+fødselsår = 1993
 årstall = 2019
 høyde = 1.75
 ```
@@ -253,21 +269,18 @@ høyde = 1.75
 
 ---
 
-Legg merke til at tekst blir skrevet med anførselstegn mens tall blir skrevet uten.
-Det er for eksempel mulig å lagre tall som tekst hvis det skrives i anførselstegn: `tall_som_tekst = "15"`. Hvorfor er det viktig å lagre variabler med riktig datatype?
-
 ### Aritmetikk
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.3 Aritmetikk`_
 
 Matematikk er viktig i dataverdenen og ikke minst når du koder.
 Heldigvis er det veldig enkelt.
-Matematiske operasjoner utføres rett frem akkurat som på barneskolen.
+Matematiske operasjoner utføres rett frem akkurat som på en vanlig kalkulator.
 
 Lag en ny rute og skriv inn følgende:
 
 ```python
-12 + 30
+30 + 12
 ```
 
 Trykk deretter run. Resultatet av kalkulasjonen vises nå under ruta.
@@ -283,21 +296,50 @@ Symbolene i Python for de vanligste operasjonene er (Arithmetic Operators):
 Bytt gjerne regneart i eksemplet og se hvordan resultatet endrer seg.
 
 Resultatet av en kalkulasjon kan og lagres i en variabel slik at du kan bruke den senere.
-Du kan for eksempel regne ut årstallet du ble født i på følgende måte:
+
+Du kan også bruke variablene du har definert tidligere til å beregne nye variabler. For eksempel kan du regne ut hvor mange år du fyller i år på følgende måte:
 
 ```python
-fødselsår = årstall - alder
-print(fødselsår)
+alder = årstall - fødselsår
+print(alder)
 ```
 
-`1993`
+`26`
 
-Det er ikke sikkert resultat av denne stemmer siden den ikke bruker full dato.
+**Oppgave 2.3**
 
-Prøv nå å regne ut hvor mange centimeter du mangler for å bli 2 meter.
+i) Beregn og print ut hvor mange centimeter du har igjen til 2 meter.
 
-**TODO**
-Oppgave 2.3
+ii) Kan man bruke noen aritmetiske operasjoner...
+
+1. mellom to tekststrenger?
+2. mellom en tekststreng og et heltall?
+   
+<details><summary>Løsning Oppgave 2.3</summary>
+<p>
+
+i)
+
+```python
+høyde = 1.75
+høydeimeter = 2 - høyde
+print(høydeimeter * 100)
+```
+
+ii)
+1. Ja, man kan plusse sammen to strenger
+```python
+print("Streng1 " + "Streng2")
+```
+`Streng1 Streng2`
+
+2. Ja, man kan gange sammen en streng og et heltall
+```python
+print("Streng1 " * 3)
+```
+`Streng1 Streng1 Streng1 `
+</p>
+</details>
 
 ---
 
@@ -306,16 +348,23 @@ Oppgave 2.3
 **TODO**
 Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk. Enhver funksjon vil alltid ha en input og en output. Python har massevis av innebygde funksjoner, som hjelper deg med enkel funksjonalitet. Noen viktige eksempler:
 - `print()`
-  Tar en variabel som input, og printer og dette til output
+  
+  Tar en variabel som input, og printer dette til output
+
 - `str()`
+  
   Gjør om et tall til en tekststreng
+
 - `int()`
+
   Gjør om en tekststreng til et heltall
+
 - `len()`
+- 
   Gir deg lengden på variabelen du sender inn
 
-
-Fordeler. Hvordan bruke.
+Fordeler. Hvordan bruke. Man kan også lage egne funksjoner. 
+En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 For eksempel str(), int(), print(),
 
 **Oppgave 2.4**
@@ -377,7 +426,7 @@ print(byer)
 
 `['Stockholm', 'Wien', 'Berlin', 'Trondheim']`
 
-Vi kan og sjekke hvor mange byer vi har besøkt ved å skrive
+Den innebygde funksjonen len() kan brukes på lister for å sjekke hvor mange objekter som ligger i listen. Vi kan sjekke hvor mange byer vi har besøkt ved å skrive
 
 ```python
 len(byer)
