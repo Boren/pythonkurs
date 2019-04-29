@@ -88,6 +88,9 @@ I dette kurset skal vi bruke **Google Colaboratory**.
 - Trykk deg inn på _File_ > _New Python 3 Notebook_
 
 Python inneholder det aller meste av basis funksjonalitet uten at du trenger gjøre noe særlig mer.
+
+_I dette kurset brukes Python 3. Noen syntaxforskjeller mot Python 2. Blant annet kreves ikke parenteser i print i Python 2._
+
 Start med å skrive følgende inn i linjen som er markert.
 
 ```python
@@ -95,6 +98,7 @@ print("Hei verden!")
 ```
 
 Deretter kan du klikke på knappen `Run cell`, eller trykke _Ctrl+Enter_.
+
 ![Run]
 
 [Run]:./images/Runcapture.JPG
@@ -108,30 +112,50 @@ Hvordan tolkes Python koden? Hva er celler i Notebooks? Hva skjer dersom jeg kj�
 Vise _Runtime_ > _Run All_. Forklare forskjell på _Runtime_ > _Run All_ vs. _Runtime_ > _Restart and Run All_
 Celler lar oss enkelt teste små deler av koden, i stedet for å kjøre alt hver gang (stor fordel med tanke på debug, learning-by-doing). 
 
-Syntax Errors i Notebooks (spesielt Google Colaborator)
+**Syntax Errors i Notebooks (spesielt i Google Colaborator)**
+
+La oss prøve å printe `Hei verden!` på to linjer.
+
+```
+Hei
+verden!
+```
+
+Et forsøk kan for eksempel være:
 
 ![SyntaxError]
 
 [SyntaxError]:./images/Error.JPG
 
 Kommer direkte med en knapp til _Stack Overflow_ (fungerer ikke som den skal akkurat nå?)
-I dette tilfellet vil løsningen vil være å bruke 
+
+Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
+
+**Oppgave 1.1**
+Skriv `Hei Verden!` på to linjer.
+<details><summary>Løsning Oppgave 1.1</summary>
+<p>
+
 ```python
 print("""Hei 
 verden!""")
 ```
+
+eller
+
+```python
+print("Hei") 
+print("verden!")
 ```
-Hei
-verden!
-```
 
+</p>
+</details>
 
- i stedet. 
- Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
+---
 
- Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
- https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq
- Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
+Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
+https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq
+Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
 
 ---
 
@@ -162,6 +186,22 @@ print(navn)
 
 Nå skal navnet ditt vises under ruten.
 
+**Oppgave 2.1**
+Lag to variabler med ditt _fornavn_ og _etternavn_. Print disse på to linjer.
+<details><summary>Løsning Oppgave 2.1</summary>
+<p>
+
+```python
+fornavn = "Fredrik"
+etternavn = "Bore"
+print(fornavn) 
+print(etternavn)
+```
+
+</p>
+</details>
+
+---
 ### Datatyper
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.2 Datatyper`_
