@@ -308,7 +308,7 @@ print(alder)
 
 **Oppgave 2.3**
 
-i) Beregn og print ut hvor mange centimeter du har igjen til 2 meter.
+i) Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.2
 
 ii) Kan man bruke noen aritmetiske operasjoner...
 
@@ -322,6 +322,7 @@ i)
 
 ```python
 høyde = 1.75
+
 høydeimeter = 2 - høyde
 print(høydeimeter * 100)
 ```
@@ -370,14 +371,15 @@ For eksempel str(), int(), print(),
 **Oppgave 2.4**
 
 Print `Året er: 2019` ved å:
-1. Lage en tekststreng variabel ("Året er: ")
-2. Gjøre om årstallet fra Oppgave 2.2 til en tekststreng
+1. Lage en ny tekststreng variabel ("Året er: ")
+2. Bruke variabelen `årstall` fra Oppgave 2.2 og gjør den om til en tekststreng
 3. Legge sammen strengene, og printe disse
 <details><summary>Løsning Oppgave 2.4</summary>
 <p>
 
 ```python
 årstall = 2019
+
 tekststreng = "Året er: "
 årstallstreng = str(årstall)
 print(tekststreng + årstallstreng)
@@ -447,6 +449,33 @@ _En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall 
 
 **TODO** Indexer i lister, hente spesifikke elementer
 
+**Oppgave 2.5**
+
+1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge. 
+2. Print listen du har laget. 
+3. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser.
+
+<details><summary>Løsning Oppgave 2.5</summary>
+<p>
+
+```python
+talliste = [11,2,84,72,36,90,15,82,10,55]
+print(talliste)
+talliste.sort()
+sjettetallet = talliste[5]
+print(sjettetallet)
+```
+
+`[11, 2, 84, 72, 36, 90, 15, 82, 10, 55]`
+`55`
+
+Husk at Python har null-basert indeksering, så det sjette tallet er på indeks _[5]_.
+
+</p>
+</details>
+
+---
+
 ### Betingelser
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.5 Betingelser`_
@@ -479,11 +508,14 @@ else:
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
+**TODO** Oppgave 2.6
+Legg til
+
 ### Imports
 
 **TODO**
 Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
-I Python, på lik linje med mange andre programmeringspråk, kan man importere biblioteker som andre har laget. Dette er diverse funksjonaliteter som du kan importere, og dermed ikke må skrive selv. Python har en rekke predefinerte bibliotek, som enkelt kan brukes ved å legge til en linje øverst i cellen.
+I Python, på lik linje med mange andre programmeringspråk, kan man importere biblioteker med funksjoner som andre har laget. Dette er diverse funksjonaliteter som du kan importere, og dermed ikke må skrive selv. Python har en rekke predefinerte bibliotek, som enkelt kan brukes ved å legge til en linje øverst i cellen.
 F.eks:
 ```python
 from math import pi
@@ -493,9 +525,26 @@ Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math
 from math import *
 ```
 
+**Oppgave 2.7**
 
+Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.5
+
+<details><summary>Løsning Oppgave 2.7</summary>
+<p>
+
+```python
+talliste = [11,2,84,72,36,90,15,82,10,55]
+
+from random import shuffle
+shuffle(talliste)
+print(talliste)
+```
+
+</p>
+</details>
 
 ---
+
 
 ## Geometri
 
