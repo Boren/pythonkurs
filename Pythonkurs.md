@@ -361,7 +361,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
   Gjør om en tekststreng til et heltall
 
 - `len()`
-- 
+  
   Gir deg lengden på variabelen du sender inn
 
 Fordeler. Hvordan bruke. Man kan også lage egne funksjoner. 
@@ -447,9 +447,20 @@ print(byer)
 
 _En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall blir sortert i stigende rekkefølge. ```.sort()``` vil ikke fungere i lister som er blandet._
 
-**TODO** Indexer i lister, hente spesifikke elementer
+**TODO** Indekser i lister, hente spesifikke elementer
+I tillegg er det i mange tilfeller interessant å finne ut av hva en liste inneholder på et spesielt sted (for eksempel hva det første elementet i listen er). Vi kan bruke indekser til dette. Indeksen til et element er plasseringen i listen.
+
+```python
+førsteby = byer[0]
+print(førsteby)
+```
+
+`Berlin`
+
+**NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
 **Oppgave 2.5**
+**TODO** Legg til en oppgave om .append() og .remove()
 
 1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge. 
 2. Print listen du har laget. 
@@ -508,8 +519,37 @@ else:
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
-**TODO** Oppgave 2.6
-Legg til
+**Oppgave 2.6**
+
+1. Lag en liste over 3 land du har besøkt
+2. Lag en ny variabel med et land du har besøkt (Det kan være et land som ligger i listen, eller et nytt land)
+3. Lag logikk for
+```plaintext
+Hvis landet finnes i listen over land jeg har besøkt:
+  print("Landet ligger allerede i listen")
+Dersom den ikke finnes:
+  Legg til landet i listen (Hint: Bruk .append())
+  Print listen over land
+```
+
+<details><summary>Løsning Oppgave 2.6</summary>
+<p>
+
+```python
+land = ["Canada","Brasil","Italia"]
+nyttland = "Sveits"
+
+if nyttland in land:
+  print("Landet ligger allerede i listen")
+else:
+  land.append(nyttland)
+  print(land)
+```
+
+</p>
+</details>
+
+---
 
 ### Imports
 
