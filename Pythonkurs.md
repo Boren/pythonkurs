@@ -348,6 +348,7 @@ print("Streng1 " * 3)
 
 **TODO**
 Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk. Enhver funksjon vil alltid ha en input og en output. Python har massevis av innebygde funksjoner, som hjelper deg med enkel funksjonalitet. Noen viktige eksempler:
+
 - `print()`
   
   Tar en variabel som input, og printer dette til output
@@ -364,9 +365,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
   
   Gir deg lengden på variabelen du sender inn
 
-Fordeler. Hvordan bruke. Man kan også lage egne funksjoner. 
-En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
-For eksempel str(), int(), print(),
+Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønskerprinte. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
 **Oppgave 2.4**
 
@@ -428,7 +427,7 @@ print(byer)
 
 `['Stockholm', 'Wien', 'Berlin', 'Trondheim']`
 
-Den innebygde funksjonen len() kan brukes på lister for å sjekke hvor mange objekter som ligger i listen. Vi kan sjekke hvor mange byer vi har besøkt ved å skrive
+Den innebygde funksjonen `len()` kan brukes på lister for å sjekke hvor mange objekter som ligger i listen. Vi kan sjekke hvor mange byer vi har besøkt ved å skrive
 
 ```python
 len(byer)
@@ -436,7 +435,7 @@ len(byer)
 
 `4`
 
-Sortering kan gjøres kjapt ved bruk av funksjonen ```.sort() ```. Så vi må skrive følgende
+Sortering kan gjøres kjapt ved bruk av funksjonen ```.sort()```. Så vi må skrive følgende
 
 ```python
 byer.sort()
@@ -553,14 +552,16 @@ else:
 
 ### Imports
 
-**TODO**
-Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
-I Python, på lik linje med mange andre programmeringspråk, kan man importere biblioteker med funksjoner som andre har laget. Dette er diverse funksjonaliteter som du kan importere, og dermed ikke må skrive selv. Python har en rekke predefinerte bibliotek, som enkelt kan brukes ved å legge til en linje øverst i cellen.
+Veldig mye av det vi programmerer, er standard funksjonalitet som andre har utviklet før oss. Det er viktig å kunne bruke funksjonalitet som allerede finnes. I Python, på lik linje med mange andre programmeringspråk, kan man importere biblioteker med funksjoner som andre har laget. Dette er diverse funksjonaliteter som du kan importere, og dermed ikke må skrive selv. Python har en rekke predefinerte bibliotek, som enkelt kan brukes ved å legge til en linje øverst i cellen.
+
 F.eks:
+
 ```python
 from math import pi
 ```
-Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math**_. For å importere all funksjonalitet fra et bibliotek på en gang kan man bruke
+
+Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math**_. Dette er et bibliotek for bruk av en rekke enkle matematiske funksjonaliteter. For å importere all funksjonalitet fra et bibliotek på en gang kan man bruke:
+
 ```python
 from math import *
 ```
@@ -634,17 +635,23 @@ plot_punkter(punkter)
 
 _Legg merke til at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 
+**TODO** Oppgave 3.1
+
 ### Kalkulering av distanse mellom punkter
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.2 Kalkulering av distanse`_
 **TODO**
 Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
 
+**TODO** Oppgave 3.2
+
 ### Polygoner
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.3 Polygoner`_
 **TODO**
 Lage polygoner som består av flere punkter og vise de i plot.
+
+**TODO** Oppgave 3.3
 
 ---
 
@@ -686,14 +693,20 @@ print(koordinater)
 
 På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
 
+**TODO** Oppgave 4.1
+
 ### Dynamiske kart med Folium
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
 **TODO**
 Hvordan vise et kart.
 
+**TODO** Oppgave 4.2
+
 ### Markers
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
 **TODO**
 Legge inn punkter i kartet og vise dem.
+
+**TODO** Oppgave 4.3
