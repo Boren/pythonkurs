@@ -365,7 +365,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
   
   Gir deg lengden på variabelen du sender inn
 
-Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønskerprinte. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
+Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
 **Oppgave 2.4**
 
@@ -657,14 +657,59 @@ Lage polygoner som består av flere punkter og vise de i plot.
 
 ## Kart med OpenStreetMap
 
-Åpne filen `4 Kart`
+Åpne filen `4 Kart`, eller manuelt kopier geokoding funksjonene:
+
+<details><summary> Geokoding funksjoner </summary>
+<p>
+
+```python
+import requests
+
+brukernavn = ""
+passord = ""
+# Henter token fra ArcGIS Server
+tokenparametre = {'username': brukernavn, 'password': passord, 'f': 'pjson', 'client': 'requestip'}
+tokenforespørsel = requests.get("https://services.geodataonline.no/arcgis/tokens/generateToken",
+                                params=tokenparametre)
+
+token = tokenforespørsel.json()['token']
+
+def geokoding(søketekst: str, koordinatsystem = 25833):
+    """"
+    Geokod ved hjelp av fritekst søk
+    Standard koordinatsystem er UTM-33
+    For bruk av WGS 84 bruk ID: 4326
+    """
+    
+    endepunkt = "https://services.geodataonline.no/arcgis/rest/services/Geosok/GeosokLokasjon2/GeocodeServer/findAddressCandidates"
+    parametre = {'SingleLine': søketekst, 'outSR': koordinatsystem, 'f': 'pjson', 'token': token}
+    
+    forespørsel = requests.get(endepunkt,
+                               params=parametre)
+    
+    return forespørsel.json()['candidates'][0]['location']
+
+def revers_geokoding(breddegrad, lengdegrad, koordinatsystem = 25833):
+    """"Revers geokod"""
+    
+    endepunkt = "https://services.geodataonline.no/arcgis/rest/services/Geosok/GeosokLokasjon2/GeocodeServer/reverseGeocode"
+    parametre = {'location': f"{breddegrad}, {lengdegrad}", 'outSR': koordinatsystem, 'f': 'pjson', 'token': token}
+    
+    forespørsel = requests.get(endepunkt,
+                               params=parametre)
+    
+    return forespørsel.json()['address']
+```
+
+</p>
+</details>
+
+---
 
 ### Geokoding
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.1 Geokoding`_
-
 Geokoding er en kjent del av GIS-hverdagen. Fordelen med Python og koding er at du kan automatisere geokoding av store datasett.
-Vi har jukset litt og forhåndlags en liten funksjon som tar seg av arbeidet.
+Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg av arbeidet.
 
 ```python
 lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
@@ -699,7 +744,7 @@ På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
 **TODO**
-Hvordan vise et kart.
+Hvordan vise et kart. Basemaps/tiles/zoomnivå osv
 
 **TODO** Oppgave 4.2
 
@@ -709,4 +754,9 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 **TODO**
 Legge inn punkter i kartet og vise dem.
 
+Marker med popup (kan bruke HTML tags her), tooltip, icon(folium.Icon), dynamisk `.add_to(m)`
+
+Shapes? Circles veldig enkelt i Folium.
+
 **TODO** Oppgave 4.3
+Lag liste over byer du har besøkt. Bruk geokoder for å finne koordinater. Legg disse i ny liste. Lag et kart med markers for alle byene.
