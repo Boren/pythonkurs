@@ -486,6 +486,7 @@ print(sjettetallet)
 ```
 
 `[11, 2, 84, 72, 36, 90, 15, 82, 10, 55]`
+
 `55`
 
 Husk at Python har null-basert indeksering, så det sjette tallet er på indeks _[5]_.
@@ -776,12 +777,29 @@ m
 
 Tips: `m` som står alene er for å vise kartet i notebooks.
 
+**Legg inn bilde her** + hva skjer hvis vi kjører print(m), og hvorfor fungerer det ikke?
+
 Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
 
 ```text
 tiles - Valg av basemap
 zoom_start - Zoomnivå
 ```
+
+Mulige Basemaps:
+
+'openstreetmap',
+'mapquestopen',
+'MapQuest Open Aerial',
+'Mapbox Bright',
+'Mapbox Control Room',
+'stamenterrain',
+'stamentoner',
+'stamenwatercolor',
+'cartodbpositron',
+'cartodbdark_matter'
+
+Bruk `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon.
 
 Eksempel:
 
@@ -821,3 +839,7 @@ Shapes? Circles veldig enkelt i Folium.
 
 **TODO** Oppgave 4.3
 Lag liste over byer du har besøkt. Bruk geokoder for å finne koordinater. Legg disse i ny liste. Lag et kart med markers for alle byene.
+
+**HVIS TID**
+Plotting av linjer:
+<https://deparkes.co.uk/2016/06/03/plot-lines-in-folium/>
