@@ -837,8 +837,35 @@ Marker med popup (kan bruke HTML tags her), tooltip, icon(folium.Icon), dynamisk
 
 Shapes? Circles veldig enkelt i Folium.
 
+Eksempel:
+
+```python
+folium.Marker(
+    [59.9103, 10.7634],
+    popup='Geodata AS'
+).add_to(m)
+
+folium.Circle(
+    radius=100,
+    location=[59.9103, 10.7634],
+    popup='Dette er en sirkel rundt Geodata AS',
+    color='crimson',
+    fill=True,
+).add_to(m)
+```
+
 **TODO** Oppgave 4.3
 Lag liste over byer du har besøkt. Bruk geokoder for å finne koordinater. Legg disse i ny liste. Lag et kart med markers for alle byene.
+
+<details><summary>Løsning Oppgave 4.3</summary>
+<p>
+
+```python
+
+```
+
+</p>
+</details>
 
 **HVIS TID**
 Plotting av linjer:
