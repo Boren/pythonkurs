@@ -713,6 +713,8 @@ def revers_geokoding(breddegrad, lengdegrad, koordinatsystem = 25833):
 </p>
 </details>
 
+Fyll deretter inn brukernavn og passord.
+
 ---
 
 ### Geokoding
@@ -723,7 +725,6 @@ Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg 
 ```python
 lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
 print((lengdegrad, breddegrad))
-##TODO Sjekk at print stemmer
 ```
 
 Revers geokoding er og mulig:
@@ -747,19 +748,70 @@ print(koordinater)
 
 På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
 
-**TODO** Oppgave 4.1
+#### Oppgave 4.1
+
+**TODO**
+<details><summary>Løsning Oppgave 4.1</summary>
+<p>
+
+```python
+
+```
+
+</p>
+</details>
 
 ### Dynamiske kart med Folium
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
-**TODO**
-Hvordan vise et kart. Basemaps/tiles/zoomnivå osv
 
-**TODO** Oppgave 4.2
+For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette baserer seg på `leaflet` som noen kanskje er kjent med.
+
+For å opprette et kart med folium trenger du bare skrive følgende:
+
+```python
+m = folium.Map(location = [ lengdegrad, breddegrad ])
+m
+```
+
+Tips: `m` som står alene er for å vise kartet i notebooks.
+
+Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
+
+```text
+tiles - Valg av basemap
+zoom_start - Zoomnivå
+```
+
+Eksempel:
+
+```python
+m = folium.Map(location = [ 58.7692591, 5.6675446 ],
+               tiles = 'Stamen Terrain',
+               zoom_start = 15)
+m
+```
+
+#### Oppgave 4.2
+
+Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et nytt kart og vis det i notebooken.
+Bonus: Sett eget zoomnivå og basemap.
+
+<details><summary>Løsning Oppgave 4.2</summary>
+<p>
+
+```python
+m = folium.Map(location = [ lengdegrad, breddegrad ])
+m
+```
+
+</p>
+</details>
 
 ### Markers
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
+
 **TODO**
 Legge inn punkter i kartet og vise dem.
 
