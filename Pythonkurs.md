@@ -96,13 +96,13 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 
 ## Jupyter Notebooks
 
-Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort. Det finnes flere måter å kjøre Jupyter Notebooks på. 
+Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort. Det finnes flere måter å kjøre Jupyter Notebooks på.
 
 I dette kurset skal vi bruke **Google Colaboratory**.
 
 ### Opprett eget Jupytermiljø
 
-- Gå til https://colab.research.google.com/notebooks/welcome.ipynb
+- Gå til <https://colab.research.google.com/notebooks/welcome.ipynb>
 - Trykk deg inn på _File_ > _New Python 3 Notebook_
 
 Python inneholder det aller meste av basis funksjonalitet uten at du trenger gjøre noe særlig mer.
@@ -128,13 +128,13 @@ Kodesnutten du har skrevet inn blir nå kjørt og resultatet vil vises nedenfor 
 **TODO**
 Hvordan tolkes Python koden? Hva er celler i Notebooks? Hva skjer dersom jeg kjører en celle? Har rekkefølgen noe å si? Hva er fordelen med celler kontra et langt script?
 Vise _Runtime_ > _Run All_. Forklare forskjell på _Runtime_ > _Run All_ vs. _Runtime_ > _Restart and Run All_
-Celler lar oss enkelt teste små deler av koden, i stedet for å kjøre alt hver gang (stor fordel med tanke på debug, learning-by-doing). 
+Celler lar oss enkelt teste små deler av koden, i stedet for å kjøre alt hver gang (stor fordel med tanke på debug, learning-by-doing).
 
-**Syntax Errors i Notebooks (spesielt i Google Colaborator)**
+#### Syntax Errors i Notebooks (spesielt i Google Colaborator)
 
 La oss prøve å printe `Hei verden!` på to linjer.
 
-```
+```text
 Hei
 verden!
 ```
@@ -149,21 +149,21 @@ Kommer direkte med en knapp til _Stack Overflow_ (fungerer ikke som den skal akk
 
 Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
 
-**Oppgave 1.1**
+#### Oppgave 1.1
 
 Skriv `Hei Verden!` på to linjer.
 <details><summary>Løsning Oppgave 1.1</summary>
 <p>
 
 ```python
-print("""Hei 
+print("""Hei
 verden!""")
 ```
 
 eller
 
 ```python
-print("Hei") 
+print("Hei")
 print("verden!")
 ```
 
@@ -173,7 +173,7 @@ print("verden!")
 ---
 
 Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
-https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq
+<https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq>
 Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
 
 ---
@@ -205,7 +205,7 @@ print(navn)
 
 Nå skal navnet ditt vises under ruten.
 
-**Oppgave 2.1**
+#### Oppgave 2.1
 
 Lag to variabler med ditt _fornavn_ og _etternavn_. Print disse på to linjer.
 <details><summary>Løsning Oppgave 2.1</summary>
@@ -214,7 +214,7 @@ Lag to variabler med ditt _fornavn_ og _etternavn_. Print disse på to linjer.
 ```python
 fornavn = "Fredrik"
 etternavn = "Bore"
-print(fornavn) 
+print(fornavn)
 print(etternavn)
 ```
 
@@ -222,6 +222,7 @@ print(etternavn)
 </details>
 
 ---
+
 ### Datatyper
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.2 Datatyper`_
@@ -247,13 +248,15 @@ Det er for eksempel mulig å lagre tall som tekst hvis det skrives i anførselst
 
 La oss legge inn noen flere variabler som bruker noen av disse datatypene.
 
-**Oppgave 2.2**
+#### Oppgave 2.2
 
 Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
+
 - `navn` skal inneholder ditt navn som tekststreng
 - `fødselsår` skal inneholde året du ble født som heltall
 - `årstall` skal inneholde året vi er i som heltall
 - `høyde` skal inneholde din høyde som flyttall
+
 <details><summary>Løsning Oppgave 2.2</summary>
 <p>
 
@@ -306,19 +309,19 @@ print(alder)
 
 `26`
 
-**Oppgave 2.3**
+#### Oppgave 2.3
 
-i) Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.2
+1. Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.2
 
-ii) Kan man bruke noen aritmetiske operasjoner...
+2. Kan man bruke noen aritmetiske operasjoner...
 
-1. mellom to tekststrenger?
-2. mellom en tekststreng og et heltall?
-   
+    1. mellom to tekststrenger?
+    2. mellom en tekststreng og et heltall?
+
 <details><summary>Løsning Oppgave 2.3</summary>
 <p>
 
-i)
+- Oppgave 1
 
 ```python
 høyde = 1.75
@@ -327,17 +330,21 @@ høydeimeter = 2 - høyde
 print(høydeimeter * 100)
 ```
 
-ii)
-1. Ja, man kan plusse sammen to strenger
+- Oppgave 2.1
+Ja, man kan plusse sammen to strenger
+
 ```python
 print("Streng1 " + "Streng2")
 ```
+
 `Streng1 Streng2`
 
-2. Ja, man kan gange sammen en streng og et heltall
+- Oppgave 2.2
+
 ```python
 print("Streng1 " * 3)
 ```
+
 `Streng1 Streng1 Streng1 `
 </p>
 </details>
@@ -367,12 +374,14 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
 
 Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
-**Oppgave 2.4**
+#### Oppgave 2.4
 
 Print `Året er: 2019` ved å:
+
 1. Lage en ny tekststreng variabel ("Året er: ")
 2. Bruke variabelen `årstall` fra Oppgave 2.2 og gjør den om til en tekststreng
 3. Legge sammen strengene, og printe disse
+
 <details><summary>Løsning Oppgave 2.4</summary>
 <p>
 
@@ -461,8 +470,8 @@ print(førsteby)
 **Oppgave 2.5**
 **TODO** Legg til en oppgave om .append() og .remove()
 
-1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge. 
-2. Print listen du har laget. 
+1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge.
+2. Print listen du har laget.
 3. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser.
 
 <details><summary>Løsning Oppgave 2.5</summary>
@@ -518,11 +527,12 @@ else:
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
-**Oppgave 2.6**
+#### Oppgave 2.6
 
 1. Lag en liste over 3 land du har besøkt
 2. Lag en ny variabel med et land du har besøkt (Det kan være et land som ligger i listen, eller et nytt land)
 3. Lag logikk for
+
 ```plaintext
 Hvis landet finnes i listen over land jeg har besøkt:
   print("Landet ligger allerede i listen")
@@ -566,7 +576,7 @@ Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math
 from math import *
 ```
 
-**Oppgave 2.7**
+#### Oppgave 2.7
 
 Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.5
 
@@ -585,7 +595,6 @@ print(talliste)
 </details>
 
 ---
-
 
 ## Geometri
 
@@ -680,24 +689,24 @@ def geokoding(søketekst: str, koordinatsystem = 25833):
     Standard koordinatsystem er UTM-33
     For bruk av WGS 84 bruk ID: 4326
     """
-    
+
     endepunkt = "https://services.geodataonline.no/arcgis/rest/services/Geosok/GeosokLokasjon2/GeocodeServer/findAddressCandidates"
     parametre = {'SingleLine': søketekst, 'outSR': koordinatsystem, 'f': 'pjson', 'token': token}
-    
+
     forespørsel = requests.get(endepunkt,
                                params=parametre)
-    
+
     return forespørsel.json()['candidates'][0]['location']
 
 def revers_geokoding(breddegrad, lengdegrad, koordinatsystem = 25833):
     """"Revers geokod"""
-    
+
     endepunkt = "https://services.geodataonline.no/arcgis/rest/services/Geosok/GeosokLokasjon2/GeocodeServer/reverseGeocode"
     parametre = {'location': f"{breddegrad}, {lengdegrad}", 'outSR': koordinatsystem, 'f': 'pjson', 'token': token}
-    
+
     forespørsel = requests.get(endepunkt,
                                params=parametre)
-    
+
     return forespørsel.json()['address']
 ```
 
