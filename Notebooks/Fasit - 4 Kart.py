@@ -13,8 +13,8 @@ except:
 #%%
 import requests
 
-brukernavn = "fredrikb"
-passord = "bB6nR9z&14v$%$Xx8I5O"
+brukernavn = ""
+passord = ""
 
 # Henter token fra ArcGIS Server
 tokenparametre = {'username': brukernavn, 'password': passord, 'f': 'pjson', 'client': 'requestip'}
