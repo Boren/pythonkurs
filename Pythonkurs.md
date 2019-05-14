@@ -402,10 +402,10 @@ print(tekststreng + årstallstreng)
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.4 Lister`_
 
-Det kan noen ganger være lurt å lagre data i lister for å holde bedre struktur på dataene.
+Det kan noen ganger være lurt å lagre data i lister for å ha bedre struktur på dataene.
 
 Se for deg at du skal lage en oversikt over byer du har vært i.
-Du lagrer byene i variabler slik at det er lett å holder oversikt. _eller..._
+Du lagrer byene i variabler slik at det er lett å holde oversikt. _eller..._
 
 ```python
 by1 = "Oslo"
@@ -415,7 +415,7 @@ by4 = "Berlin"
 ...
 ```
 
-Dette blir fort veldig rotete når du begynner å få mange byer. Se for deg 10.000 linjer med steder du har besøkt.
+Dette blir fort veldig rotete når du begynner å få mange byer. Tenk deg at skal lagre 10.000 linjer med steder du har besøkt.
 Løsningen på problemet er å lagre dataene i en liste.
 _Legg gjerne inn byer du selv har besøkt_
 
@@ -426,7 +426,7 @@ print(byer)
 
 `['Oslo', 'Stockholm', 'Wien', 'Berlin']`
 
-Dette gir og muligheten for enkelt å fjerne eller legge til byer i listen. Det kan gjøres ved hjelp noen listefunksjoner som er innebygd i Python.
+Dette gir og muligheten for enkelt å fjerne eller legge til byer i listen. Det kan gjøres ved hjelp av noen listefunksjoner som er innebygd i Python.
 
 ```python
 byer.append("Trondheim")
