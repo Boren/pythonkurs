@@ -4,7 +4,7 @@
 
 4 moduler. 8 timer totalt.
 
-Det er litt knapt med tid så kurset kommer til å gå relativt raskt og enkelte komponenter får ikke den fulle forklaringen de egentlig trenger. Det oppfordres og til å eksperimentere på egenhånd dersom du ligger litt foran. Skulle noe gå galt har vi ferdiglagde sjekkpunkter du enkelt kan åpne.
+Det er litt knapt med tid så kurset kommer til å gå relativt raskt og enkelte komponenter får ikke den fulle forklaringen de egentlig trenger. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
 
 Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen enkel. Dette gjør og at vi på forhånd kan installere modulene som kreves og legge inn startmaler til oppgaver.
 
@@ -36,7 +36,7 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
   
   Enkle beregninger i Python
 
-- Bruk av forhåndlagde og innebygde funksjoner
+- Bruk av forhåndslagde og innebygde funksjoner
   
   Fordeler. Hvordan bruke.
 
@@ -46,7 +46,7 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
 
 - Betingelser
   
-  I all hovedsak enkle «if», «and» og «or».
+  Logiske valg og gjentakelser. "If-setning" og "for-løkker".
 
 - Imports
   
@@ -250,6 +250,27 @@ La oss legge inn noen flere variabler som bruker noen av disse datatypene.
 
 #### Oppgave 2.2
 
+Skriv inn følgende og kjør koden
+
+```python
+print(2 + 2)
+print('2' + 2)
+print('2' + '2')
+print('2 + 2')
+```
+
+Kan du forklare hva som skjer? (_En av de vil gi feilmelding_)
+
+<details><summary>Løsning Oppgave 2.2</summary>
+<p>
+
+TODO: Svar
+
+</p>
+</details>
+
+#### Oppgave 2.3
+
 Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
 
 - `navn` skal inneholder ditt navn som tekststreng
@@ -257,7 +278,7 @@ Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
 - `årstall` skal inneholde året vi er i som heltall
 - `høyde` skal inneholde din høyde som flyttall
 
-<details><summary>Løsning Oppgave 2.2</summary>
+<details><summary>Løsning Oppgave 2.3</summary>
 <p>
 
 ```python
@@ -309,19 +330,19 @@ print(alder)
 
 `26`
 
-#### Oppgave 2.3
+#### Oppgave 2.4
 
-1. Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.2
+1. Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.3
 
 2. Kan man bruke noen aritmetiske operasjoner...
 
     1. mellom to tekststrenger?
     2. mellom en tekststreng og et heltall?
 
-<details><summary>Løsning Oppgave 2.3</summary>
+<details><summary>Løsning Oppgave 2.4</summary>
 <p>
 
-- Oppgave 1
+- Deloppgave 1
 
 ```python
 høyde = 1.75
@@ -330,7 +351,7 @@ høydeimeter = 2 - høyde
 print(høydeimeter * 100)
 ```
 
-- Oppgave 2.1
+- Deloppgave 2.1
 Ja, man kan plusse sammen to strenger
 
 ```python
@@ -339,7 +360,7 @@ print("Streng1 " + "Streng2")
 
 `Streng1 Streng2`
 
-- Oppgave 2.2
+- Deloppgave 2.2
 
 ```python
 print("Streng1 " * 3)
