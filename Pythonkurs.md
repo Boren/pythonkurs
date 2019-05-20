@@ -76,9 +76,9 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
   
   Hvordan vise et kart.
 
-- Markers
+- Markers og Shapes
   
-  Legge inn punkter i kartet og vise dem.
+  Legge inn enkle elementer i kartet og vise dem.
 
 ---
 
@@ -799,7 +799,7 @@ Mulige Basemaps:
 'cartodbpositron',
 'cartodbdark_matter'
 
-Bruk `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon.
+Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon. **NB!** _Ikke alle bakgrunnskart fungerer på alle zoomnivåer._
 
 Eksempel:
 
@@ -812,21 +812,31 @@ m
 
 #### Oppgave 4.2
 
-Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et nytt kart og vis det i notebooken.
-Bonus: Sett eget zoomnivå og basemap.
+Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og basemap.
+
+Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
+
 
 <details><summary>Løsning Oppgave 4.2</summary>
 <p>
 
 ```python
-m = folium.Map(location = [ lengdegrad, breddegrad ])
+m = folium.Map(location=[59.9103, 10.7634],
+    tiles='Stamen Toner',
+    zoom_start=16
+)
+
+folium.TileLayer('openstreetmap').add_to(m)
+folium.TileLayer('stamentoner').add_to(m)
+folium.LayerControl().add_to(m)
+
 m
 ```
 
 </p>
 </details>
 
-### Markers
+### Markers og Shapes
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
 
@@ -835,8 +845,6 @@ Legge inn punkter i kartet og vise dem.
 
 Marker med popup (kan bruke HTML tags her), tooltip, icon(folium.Icon), dynamisk `.add_to(m)`
 
-Shapes? Circles veldig enkelt i Folium.
-
 Eksempel:
 
 ```python
@@ -844,7 +852,19 @@ folium.Marker(
     [59.9103, 10.7634],
     popup='Geodata AS'
 ).add_to(m)
+```
+Icon: Folium bruker glyphicon (<https://getbootstrap.com/docs/3.3/components/#glyphicons-glyphs>):
 
+Eksempel:
+
+`folium.Icon(color='lightgray', icon='step-backward', prefix='fa')`
+
+
+Shapes: Circles veldig enkelt i Folium.
+
+Eksempel:
+
+```python
 folium.Circle(
     radius=100,
     location=[59.9103, 10.7634],
