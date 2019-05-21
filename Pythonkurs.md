@@ -40,6 +40,10 @@ Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen e
   
   Fordeler. Hvordan bruke.
 
+- Input
+
+  Hva kan det brukes til. Fordeler med interaksjon mens et script kjører
+
 - Lister
   
   Hva er lister? Hvordan bruke dem? Hvilke fordeler gir det å lagre verdier i lister?
@@ -125,10 +129,19 @@ Kodesnutten du har skrevet inn blir nå kjørt og resultatet vil vises nedenfor 
 
 `Hei verden!`
 
+Flere fordeler i Jupyter/Google Colaborator:
+
+![Run2]
+
+[Run2]:./images/Runcapture2.JPG
+
+Systemet inneholder innebygd funksjonalitet for om cellen har blitt kjørt siden de siste endringene, hvem den ble kjørt av (mulig å dele kode, og jobbe sammen på kode), når den ble kjørt, og hvor lang tid det tok å kjøre den.
+
 **TODO**
 Hvordan tolkes Python koden? Hva er celler i Notebooks? Hva skjer dersom jeg kjører en celle? Har rekkefølgen noe å si? Hva er fordelen med celler kontra et langt script?
 Vise _Runtime_ > _Run All_. Forklare forskjell på _Runtime_ > _Run All_ vs. _Runtime_ > _Restart and Run All_
 Celler lar oss enkelt teste små deler av koden, i stedet for å kjøre alt hver gang (stor fordel med tanke på debug, learning-by-doing).
+Innebygde code snippets man kan hente (f.eks Camera Capture)
 
 #### Syntax Errors i Notebooks (spesielt i Google Colaborator)
 
