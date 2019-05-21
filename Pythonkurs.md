@@ -254,8 +254,17 @@ Skriv inn følgende og kjør koden
 
 ```python
 print(2 + 2)
+```
+
+```python
 print('2' + 2)
+```
+
+```python
 print('2' + '2')
+```
+
+```python
 print('2 + 2')
 ```
 
@@ -264,7 +273,13 @@ Kan du forklare hva som skjer? (_En av de vil gi feilmelding_)
 <details><summary>Løsning Oppgave 2.2</summary>
 <p>
 
-TODO: Svar
+`4` - Plusset sammen to heltall
+
+`TypeError` - Forsøkte å plusse sammen en streng og et heltall (Det går ikke)
+
+`22` - Satt sammen to tekststrenger
+
+`2 + 2` - Printet en hel sammenhengende tekststrengen
 
 </p>
 </details>
@@ -393,6 +408,10 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
   
   Gir deg lengden på variabelen du sender inn
 
+- `input()`
+
+  Gir deg mulighet til å skrive inn en input
+
 Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
 #### Oppgave 2.4
@@ -413,6 +432,26 @@ tekststreng = "Året er: "
 årstallstreng = str(årstall)
 print(tekststreng + årstallstreng)
 ```
+
+</p>
+</details>
+
+---
+
+### TODO Input
+
+Input-funksjonen er viktig for interaksjon med programmet mens det kjører...
+`input()` returnerer det man oppgir som streng. Viktig å gjøre om dersom 
+
+#### TODO Oppgave 2.x
+
+1. Lag et inputfelt hvor brukeren skriver skal inn et tall (Hint: bruk `int()` sammen med `input()`).
+2. Print ut det dobbelte av tallet brukeren har oppgitt.
+
+<details><summary>Løsning Oppgave 2.x</summary>
+<p>
+
+TODO Løsning
 
 </p>
 </details>
