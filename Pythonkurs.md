@@ -8,6 +8,8 @@ Det er litt knapt med tid så kurset kommer til å gå relativt raskt og enkelte
 
 Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen enkel. Dette gjør og at vi på forhånd kan installere modulene som kreves og legge inn startmaler til oppgaver.
 
+Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe videre med det etter fullført kurs. På slutten har vi og lagd ved noen lenker og instruksjoner til hvordan du kan komme igang på lokal maskin.
+
 ---
 
 ## Kursoversikt
@@ -111,7 +113,7 @@ I dette kurset skal vi bruke **Google Colaboratory**.
 
 Python inneholder det aller meste av basis funksjonalitet uten at du trenger gjøre noe særlig mer.
 
-_I dette kurset brukes Python 3. Noen syntaxforskjeller mot Python 2. Blant annet kreves ikke parenteser i print i Python 2._
+_I dette kurset brukes Python 3. Det finnes noen små syntaxforskjeller sammenlignet med Python 2. Blant annet kreves ikke parenteser i print i Python 2._
 
 Start med å skrive følgende inn i linjen som er markert.
 
@@ -770,7 +772,8 @@ def geokoding(søketekst: str, koordinatsystem = 25833):
     forespørsel = requests.get(endepunkt,
                                params=parametre)
 
-    return forespørsel.json()['candidates'][0]['location']
+    return (forespørsel.json()['candidates'][0]['location']['x'],
+            forespørsel.json()['candidates'][0]['location']['y'])
 
 def revers_geokoding(breddegrad, lengdegrad, koordinatsystem = 25833):
     """"Revers geokod"""
@@ -801,11 +804,30 @@ lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
 print((lengdegrad, breddegrad))
 ```
 
+```text
+(263158.4893784048, 6649002.460467065)
+```
+
 Revers geokoding er og mulig:
 
 ```python
 plassering = revers_geokoding(59.91029, 10.76337)
 print(plassering)
+```
+
+```text
+{
+  'Adresse': 'Schweigaards gate 28',
+  'Stedsnavn': None,
+  'Postnummer': '0191',
+  'Poststed': 'Oslo',
+  'Kommune': 'Oslo',
+  'GNR': None,
+  'BNR': None,
+  'FNR': None,
+  'SNR': None,
+  'Loc_name': 'Adresse'
+}
 ```
 
 Vi kan og bruke en liste med adresser og geokode disse:
@@ -814,22 +836,47 @@ Vi kan og bruke en liste med adresser og geokode disse:
 adresser = ["Schweigaardsgate 28, Oslo", "Gabels Gate 21, Oslo", "Austhallet 17, Klepp Stasjon"]
 
 koordinater = []
+
 for adresse in adresser:
     koordinater.append(geokoding(adresse))
 
 print(koordinater)
 ```
 
+```text
+[(263158.4893784048, 6649002.460467065),
+ (260215.4204419753, 6649640.687409842),
+ (-38516.53384195722, 6551979.74641538)]
+```
+
 På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
 
-#### Oppgave 4.1
+#### Oppgave 4.1.1
 
-**TODO**
-<details><summary>Løsning Oppgave 4.1</summary>
+Finn koordinatene til stedet du bor (eller et valgfritt annet sted) og print de.
+
+<details><summary>Løsning Oppgave 4.1.1</summary>
 <p>
 
 ```python
+lengdegrad, breddegrad = geokoding("<DIN ADRESSE>")
+print((lengdegrad, breddegrad))
+```
 
+</p>
+</details>
+
+#### Oppgave 4.1.2
+
+Bruk revers geokoding på koordinatene du fant og analyser resultatet.
+Stemmer alt av detaljer?
+
+<details><summary>Løsning Oppgave 4.1.2</summary>
+<p>
+
+```python
+plassering = revers_geokoding(lengdegrad, breddegrad)
+print(plassering)
 ```
 
 </p>
@@ -850,7 +897,9 @@ m
 
 Tips: `m` som står alene er for å vise kartet i notebooks.
 
-**Legg inn bilde her** + hva skjer hvis vi kjører print(m), og hvorfor fungerer det ikke?
+![Kart]
+
+[Kart]: ./images/kart.png
 
 Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
 
@@ -861,18 +910,20 @@ zoom_start - Zoomnivå
 
 Mulige Basemaps:
 
-'openstreetmap',
-'mapquestopen',
-'MapQuest Open Aerial',
-'Mapbox Bright',
-'Mapbox Control Room',
-'stamenterrain',
-'stamentoner',
-'stamenwatercolor',
-'cartodbpositron',
-'cartodbdark_matter'
+- 'openstreetmap',
+- 'mapquestopen',
+- 'MapQuest Open Aerial',
+- 'Mapbox Bright',
+- 'Mapbox Control Room',
+- 'stamenterrain',
+- 'stamentoner',
+- 'stamenwatercolor',
+- 'cartodbpositron',
+- 'cartodbdark_matter'
 
-Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon. **NB!** _Ikke alle bakgrunnskart fungerer på alle zoomnivåer._
+Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon.
+
+**NB!** _Ikke alle bakgrunnskart fungerer på alle zoomnivåer._
 
 Eksempel:
 
@@ -926,6 +977,7 @@ folium.Marker(
     popup='Geodata AS'
 ).add_to(m)
 ```
+
 Icon: Folium bruker glyphicon (<https://getbootstrap.com/docs/3.3/components/#glyphicons-glyphs>):
 
 Eksempel:
