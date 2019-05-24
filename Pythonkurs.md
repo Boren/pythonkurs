@@ -86,7 +86,7 @@ Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe vi
   
   Legge inn enkle elementer i kartet og vise dem.
 
----
+<div style="page-break-after: always;"></div>
 
 ## Introduksjon til Python og Jupytermiljøet
 
@@ -191,7 +191,7 @@ Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
 <https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq>
 Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
 
----
+<div style="page-break-after: always;"></div>
 
 ## Programmeringskonsepter
 
@@ -670,7 +670,7 @@ print(talliste)
 </p>
 </details>
 
----
+<div style="page-break-after: always;"></div>
 
 ## Geometri
 
@@ -680,10 +680,10 @@ print(talliste)
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.1 Punkter`_
 
-Vi skal jobbe med biblioteket som heter `Shapely` som er et åpent bibliotek for manipulering og analyse av geometri.
-Biblioteket er ferdig installert av oss.
+Vi skal jobbe med biblioteket som heter `Shapely`. Dette er et åpent bibliotek for manipulering og analyse av geometri.
+Biblioteket er ferdig installert i Google Colab.
 
-Vi vil ha muligheten til å jobbe med punkter og skriver derfor følgende i første rute:
+Vi ønsker muligheten til å jobbe med punkter og skriver derfor følgende i første rute:
 
 ```python
 from shapely.geometry import Point
@@ -703,7 +703,10 @@ plot_punkt(punkt)
 ```
 
 Du vil nå få opp en graf tilsvarende denne:
-_ENDRE DENNE_
+
+![Punkt]
+
+[Punkt]: ./images/punkt.png
 
 Et enkelt punkt er jo ganske kjedelig så la oss legge inn en haug!
 Opprett en liste og legg til så mange punkter du orker.
@@ -720,7 +723,21 @@ plot_punkter(punkter)
 
 _Legg merke til at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 
-**TODO** Oppgave 3.1
+![Punkter]
+
+[Punkter]: ./images/punkter.png
+
+#### Oppgave 3.1
+
+<details><summary>Løsning Oppgave 3.1</summary>
+<p>
+
+```python
+
+```
+
+</p>
+</details>
 
 ### Kalkulering av distanse mellom punkter
 
@@ -728,7 +745,17 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 **TODO**
 Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
 
-**TODO** Oppgave 3.2
+#### Oppgave 3.2
+
+<details><summary>Løsning Oppgave 3.2</summary>
+<p>
+
+```python
+
+```
+
+</p>
+</details>
 
 ### Polygoner
 
@@ -736,9 +763,50 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 **TODO**
 Lage polygoner som består av flere punkter og vise de i plot.
 
-**TODO** Oppgave 3.3
+#### Oppgave 3.3
 
----
+<details><summary>Løsning Oppgave 3.3</summary>
+<p>
+
+```python
+
+```
+
+</p>
+</details>
+
+#### Oppgave 3.4
+
+Vanskelig bonusoppgave.
+Plot 16 punkter jevnt fordelt i en sirkel ved hjelp av en `for`-løkke.
+Tips: Bruk sinus og cosinus funksjonene i `math` modulen.
+
+<details><summary>Løsningsforslag Oppgave 3.4</summary>
+<p>
+
+```python
+import math
+
+sirkelpunkter = []
+antallPunkter = 16
+
+for x in range(0, antallPunkter):
+  punkt = Point(math.sin(x / antallPunkter * 2 * math.pi),
+                math.cos(x / antallPunkter * 2 * math.pi))
+  
+  sirkelpunkter.append(punkt)
+  
+plot_punkter(sirkelpunkter)
+```
+
+![Sirkel]
+
+[Sirkel]: ./images/sirkel.png
+
+</p>
+</details>
+
+<div style="page-break-after: always;"></div>
 
 ## Kart med OpenStreetMap
 
@@ -934,14 +1002,16 @@ m = folium.Map(location = [ 58.7692591, 5.6675446 ],
 m
 ```
 
-#### Oppgave 4.2
+**NB!** _Husk å importere folium før du går igang med oppgavene._
+
+#### Oppgave 4.2.1
 
 Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og basemap.
 
 Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
 
 
-<details><summary>Løsning Oppgave 4.2</summary>
+<details><summary>Løsning Oppgave 4.2.1</summary>
 <p>
 
 ```python
