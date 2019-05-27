@@ -108,7 +108,7 @@ I dette kurset skal vi bruke **Google Colaboratory**.
 
 ### Opprett eget Jupytermiljø
 
-- Gå til <https://colab.research.google.com/notebooks/welcome.ipynb>
+- Gå til <https://colab.research.google.com>
 - Trykk deg inn på _File_ > _New Python 3 Notebook_
 
 Python inneholder det aller meste av basis funksjonalitet uten at du trenger gjøre noe særlig mer.
@@ -429,7 +429,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
 
 Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
-#### Oppgave 2.4
+#### Oppgave 2.x
 
 Print `Året er: 2019` ved å:
 
@@ -437,7 +437,7 @@ Print `Året er: 2019` ved å:
 2. Bruke variabelen `årstall` fra Oppgave 2.2 og gjør den om til en tekststreng
 3. Legge sammen strengene, og printe disse
 
-<details><summary>Løsning Oppgave 2.4</summary>
+<details><summary>Løsning Oppgave 2.x</summary>
 <p>
 
 ```python
@@ -455,8 +455,8 @@ print(tekststreng + årstallstreng)
 
 ### TODO Input
 
-Input-funksjonen er viktig for interaksjon med programmet mens det kjører...
-`input()` returnerer det man oppgir som streng. Viktig å gjøre om dersom 
+Input-funksjonen er viktig for interaksjon med programmet mens det kjører.
+`input()` returnerer det man oppgir som streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
 
 #### TODO Oppgave 2.x
 
@@ -1010,7 +1010,6 @@ Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et ny
 
 Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
 
-
 <details><summary>Løsning Oppgave 4.2.1</summary>
 <p>
 
@@ -1021,7 +1020,6 @@ m = folium.Map(location=[59.9103, 10.7634],
 )
 
 folium.TileLayer('openstreetmap').add_to(m)
-folium.TileLayer('stamentoner').add_to(m)
 folium.LayerControl().add_to(m)
 
 m
@@ -1034,26 +1032,37 @@ m
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
 
-**TODO**
-Legge inn punkter i kartet og vise dem.
+Det er enkelt å legge til egendefinerte markers med masse forskjellige valg.
+Dette gjøres ved hjelp av `folium.Marker()`.
 
-Marker med popup (kan bruke HTML tags her), tooltip, icon(folium.Icon), dynamisk `.add_to(m)`
+- popup (Her kan bruke HTML tags)
+- tooltip
+- icon
+  - Folium bruker Font Awesome (<https://fontawesome.com/icons>)
+  - Du kan sette egendefinert farge ved hjhelp av `color`
+
+For å faktisk legge markeren til i kartet bruker du følgende funksjon: `.add_to(m)`
 
 Eksempel:
 
 ```python
 folium.Marker(
     [59.9103, 10.7634],
-    popup='Geodata AS'
+    popup='Geodata AS',
+    tooltip='Geodata Tooltip',
+    icon=folium.Icon(color='red',icon='cloud'),
 ).add_to(m)
+
+m
 ```
 
-Icon: Folium bruker glyphicon (<https://getbootstrap.com/docs/3.3/components/#glyphicons-glyphs>):
+![MarkerIcon]
+
+[MarkerIcon]: ./images/icon.png
 
 Eksempel:
 
 `folium.Icon(color='lightgray', icon='step-backward', prefix='fa')`
-
 
 Shapes: Circles veldig enkelt i Folium.
 
@@ -1069,8 +1078,18 @@ folium.Circle(
 ).add_to(m)
 ```
 
-**TODO** Oppgave 4.3
-Lag liste over byer du har besøkt. Bruk geokoder for å finne koordinater. Legg disse i ny liste. Lag et kart med markers for alle byene.
+![SirkelMarker]
+
+[SirkelMarker]: ./images/sirkelmarker.png
+
+#### Oppgave 4.3.1
+
+- Lag liste over byer du har besøkt.
+  - Bruk geokoder for å finne koordinater.
+  - Legg disse i ny liste.
+- Lag et kart med markers for alle byene.
+
+Bonuspoeng: Lag tooltip med navnet på byen.
 
 <details><summary>Løsning Oppgave 4.3</summary>
 <p>
@@ -1078,7 +1097,6 @@ Lag liste over byer du har besøkt. Bruk geokoder for å finne koordinater. Legg
 ```python
 
 ```
-
 </p>
 </details>
 
