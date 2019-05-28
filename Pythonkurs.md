@@ -836,7 +836,7 @@ tokenforespørsel = requests.get("https://services.geodataonline.no/arcgis/token
 
 token = tokenforespørsel.json()['token']
 
-def geokoding(søketekst: str, koordinatsystem = 25833):
+def geokoding(søketekst: str, koordinatsystem = 4326):
     """"
     Geokod ved hjelp av fritekst søk
     Standard koordinatsystem er UTM-33
@@ -874,7 +874,7 @@ Fyll deretter inn brukernavn og passord.
 ### Geokoding
 
 Geokoding er en kjent del av GIS-hverdagen. Fordelen med Python og koding er at du kan automatisere geokoding av store datasett.
-Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg av arbeidet.
+Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg av arbeidet. Denne geokodingen vil kun fungere for steder i Norge.
 
 ```python
 lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
@@ -882,13 +882,13 @@ print((lengdegrad, breddegrad))
 ```
 
 ```text
-(263158.4893784048, 6649002.460467065)
+(10.763368458155954, 59.91029353312019)
 ```
 
-Revers geokoding er og mulig:
-
+#### TODO Revers geokoding er og mulig: TODO
+Må bruke UTM (?)
 ```python
-plassering = revers_geokoding(59.91029, 10.76337)
+plassering = revers_geokoding(59.91029,     10.76337)
 print(plassering)
 ```
 
@@ -921,12 +921,13 @@ print(koordinater)
 ```
 
 ```text
-[(263158.4893784048, 6649002.460467065),
- (260215.4204419753, 6649640.687409842),
- (-38516.53384195722, 6551979.74641538)]
+[(10.763368458155954, 59.91029353312019), 
+(10.710155016908361, 59.914308706660485), 
+(5.66974950236923, 58.76925371377823)]
 ```
 
-På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
+På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning. 
+##### NB! Folium bruker lengde/breddgrad i omvendt rekkefølge
 
 #### Oppgave 4.1.1
 
