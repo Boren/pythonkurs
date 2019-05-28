@@ -211,7 +211,7 @@ navn = "Fredrik"
 ```
 
 Kjør ruten. De vil nå ikke komme noe resultat siden vi ikke bruker `print`.
-Legg inn en `print``i samme rute slik at vi kan se hva verdien av variabelen er:
+Legg inn en `print` i samme rute slik at vi kan se hva verdien av variabelen er:
 
 ```python
 navn = "Fredrik"
@@ -429,15 +429,15 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
 
 Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
-#### Oppgave 2.x
+#### Oppgave 2.5
 
 Print `Året er: 2019` ved å:
 
 1. Lage en ny tekststreng variabel ("Året er: ")
-2. Bruke variabelen `årstall` fra Oppgave 2.2 og gjør den om til en tekststreng
+2. Bruke variabelen `årstall` fra Oppgave 2.3 og gjør den om til en tekststreng
 3. Legge sammen strengene, og printe disse
 
-<details><summary>Løsning Oppgave 2.x</summary>
+<details><summary>Løsning Oppgave 2.5</summary>
 <p>
 
 ```python
@@ -453,20 +453,30 @@ print(tekststreng + årstallstreng)
 
 ---
 
-### TODO Input
+### Input
 
 Input-funksjonen er viktig for interaksjon med programmet mens det kjører.
+Etter at en linje som inneholder funksjonen har kjørt venter programmet på at brukeren skriver inn noe og trykker `Enter`.
+
+![InputCapture]
+
+[InputCapture]:./images/InputCapture.JPG
+
 `input()` returnerer det man oppgir som streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
 
-#### TODO Oppgave 2.x
+#### Oppgave 2.6
 
 1. Lag et inputfelt hvor brukeren skriver skal inn et tall (Hint: bruk `int()` sammen med `input()`).
 2. Print ut det dobbelte av tallet brukeren har oppgitt.
 
-<details><summary>Løsning Oppgave 2.x</summary>
+<details><summary>Løsning Oppgave 2.6</summary>
 <p>
 
-TODO Løsning
+```python
+tallstreng = input("Skriv inn et tall: ")
+tall = int(tallstreng)
+print(2*tall)
+```
 
 </p>
 </details>
@@ -530,7 +540,6 @@ print(byer)
 
 _En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall blir sortert i stigende rekkefølge. ```.sort()``` vil ikke fungere i lister som er blandet._
 
-**TODO** Indekser i lister, hente spesifikke elementer
 I tillegg er det i mange tilfeller interessant å finne ut av hva en liste inneholder på et spesielt sted (for eksempel hva det første elementet i listen er). Vi kan bruke indekser til dette. Indeksen til et element er plasseringen i listen.
 
 ```python
@@ -542,14 +551,14 @@ print(førsteby)
 
 **NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
-**Oppgave 2.5**
+**Oppgave 2.7**
 **TODO** Legg til en oppgave om .append() og .remove()
 
 1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge.
 2. Print listen du har laget.
 3. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser.
 
-<details><summary>Løsning Oppgave 2.5</summary>
+<details><summary>Løsning Oppgave 2.7</summary>
 <p>
 
 ```python
@@ -603,7 +612,7 @@ else:
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
-#### Oppgave 2.6
+#### Oppgave 2.8
 
 1. Lag en liste over 3 land du har besøkt
 2. Lag en ny variabel med et land du har besøkt (Det kan være et land som ligger i listen, eller et nytt land)
@@ -617,7 +626,7 @@ Dersom den ikke finnes:
   Print listen over land
 ```
 
-<details><summary>Løsning Oppgave 2.6</summary>
+<details><summary>Løsning Oppgave 2.8</summary>
 <p>
 
 ```python
@@ -652,11 +661,11 @@ Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math
 from math import *
 ```
 
-#### Oppgave 2.7
+#### Oppgave 2.9
 
-Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.5
+Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.7
 
-<details><summary>Løsning Oppgave 2.7</summary>
+<details><summary>Løsning Oppgave 2.9</summary>
 <p>
 
 ```python
