@@ -661,6 +661,14 @@ Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math
 from math import *
 ```
 
+eller
+
+```python
+import math
+```
+
+_*NB! I så fall må man bruke 'math.pi'*_
+
 #### Oppgave 2.9
 
 Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.7
@@ -886,19 +894,8 @@ def geokoding(søketekst: str, koordinatsystem = 4326):
     forespørsel = requests.get(endepunkt,
                                params=parametre)
 
-    return (forespørsel.json()['candidates'][0]['location']['x'],
-            forespørsel.json()['candidates'][0]['location']['y'])
-
-def revers_geokoding(breddegrad, lengdegrad, koordinatsystem = 25833):
-    """"Revers geokod"""
-
-    endepunkt = "https://services.geodataonline.no/arcgis/rest/services/Geosok/GeosokLokasjon2/GeocodeServer/reverseGeocode"
-    parametre = {'location': f"{breddegrad}, {lengdegrad}", 'outSR': koordinatsystem, 'f': 'pjson', 'token': token}
-
-    forespørsel = requests.get(endepunkt,
-                               params=parametre)
-
-    return forespørsel.json()['address']
+    return (forespørsel.json()['candidates'][0]['location']['y'],
+            forespørsel.json()['candidates'][0]['location']['x'])
 ```
 
 </p>
@@ -914,37 +911,15 @@ Geokoding er en kjent del av GIS-hverdagen. Fordelen med Python og koding er at 
 Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg av arbeidet. Denne geokodingen vil kun fungere for steder i Norge.
 
 ```python
-lengdegrad, breddegrad = geokoding("Schweigaardsgate 28, Oslo")
-print((lengdegrad, breddegrad))
+breddegrad, lengdegrad = geokoding("Schweigaardsgate 28, Oslo")
+print((breddegrad, lengdegrad))
 ```
 
 ```text
-(10.763368458155954, 59.91029353312019)
+(59.91029353312019, 10.763368458155954)
 ```
 
-#### TODO Revers geokoding er og mulig: TODO
-Må bruke UTM (?)
-```python
-plassering = revers_geokoding(59.91029,     10.76337)
-print(plassering)
-```
-
-```text
-{
-  'Adresse': 'Schweigaards gate 28',
-  'Stedsnavn': None,
-  'Postnummer': '0191',
-  'Poststed': 'Oslo',
-  'Kommune': 'Oslo',
-  'GNR': None,
-  'BNR': None,
-  'FNR': None,
-  'SNR': None,
-  'Loc_name': 'Adresse'
-}
-```
-
-Vi kan og bruke en liste med adresser og geokode disse:
+Vi kan og bruke en liste med adresser og ved hejlp av for-løkker geokode disse:
 
 ```python
 adresser = ["Schweigaardsgate 28, Oslo", "Gabels Gate 21, Oslo", "Austhallet 17, Klepp Stasjon"]
@@ -958,13 +933,12 @@ print(koordinater)
 ```
 
 ```text
-[(10.763368458155954, 59.91029353312019), 
-(10.710155016908361, 59.914308706660485), 
-(5.66974950236923, 58.76925371377823)]
+[(59.91029353312019, 10.763368458155954),
+(59.914308706660485, 10.710155016908361),
+(58.76925371377823, 5.66974950236923)]
 ```
 
-På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning. 
-##### NB! Folium bruker lengde/breddgrad i omvendt rekkefølge
+På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
 
 #### Oppgave 4.1.1
 
@@ -974,8 +948,8 @@ Finn koordinatene til stedet du bor (eller et valgfritt annet sted) og print de.
 <p>
 
 ```python
-lengdegrad, breddegrad = geokoding("<DIN ADRESSE>")
-print((lengdegrad, breddegrad))
+breddegrad, lengdegrad = geokoding("<DIN ADRESSE>")
+print((breddegrad, lengdegrad))
 ```
 
 </p>
@@ -983,19 +957,7 @@ print((lengdegrad, breddegrad))
 
 #### Oppgave 4.1.2
 
-Bruk revers geokoding på koordinatene du fant og analyser resultatet.
-Stemmer alt av detaljer?
-
-<details><summary>Løsning Oppgave 4.1.2</summary>
-<p>
-
-```python
-plassering = revers_geokoding(lengdegrad, breddegrad)
-print(plassering)
-```
-
-</p>
-</details>
+TODO Oppgave med forløkke
 
 ### Dynamiske kart med Folium
 
@@ -1006,6 +968,7 @@ For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette base
 For å opprette et kart med folium trenger du bare skrive følgende:
 
 ```python
+import folium
 m = folium.Map(location = [ lengdegrad, breddegrad ])
 m
 ```
@@ -1043,6 +1006,7 @@ Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` 
 Eksempel:
 
 ```python
+import folium
 m = folium.Map(location = [ 58.7692591, 5.6675446 ],
                tiles = 'Stamen Terrain',
                zoom_start = 15)
@@ -1061,6 +1025,8 @@ Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileL
 <p>
 
 ```python
+import folium
+
 m = folium.Map(location=[59.9103, 10.7634],
     tiles='Stamen Toner',
     zoom_start=16
@@ -1131,7 +1097,7 @@ folium.Circle(
 
 #### Oppgave 4.3.1
 
-- Lag liste over byer du har besøkt.
+- Lag liste over byer i Norge du har besøkt.
   - Bruk geokoder for å finne koordinater.
   - Legg disse i ny liste.
 - Lag et kart med markers for alle byene.
