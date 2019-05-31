@@ -691,7 +691,7 @@ print(talliste)
 
 ## Geometri
 
-Åpne filen `3 Geometri`, eller manuelt kopier plotting funksjonene:
+Manuelt kopier plotting funksjonene:
 
 <details><summary> Plotting funksjoner </summary>
 <p>
@@ -709,7 +709,7 @@ def plot_punkt(punkt: Point):
     """
     fig = plt.figure(1, figsize=(5, 5), dpi=90)
     ax = fig.add_subplot(111)
-    ax.scatter(punkt.x, punkt.y)
+    ax.scatter(punkt[0], punkt[1])
     ax.set_title('Punkt')
 
 
@@ -717,12 +717,23 @@ def plot_punkter(punkter: List[Point]):
     """
     Plot flere punkter på samme plot
     """
-    x = [punkt.x for punkt in punkter]
-    y = [punkt.y for punkt in punkter]
+    x = [punkt[0] for punkt in punkter]
+    y = [punkt[1] for punkt in punkter]
     fig = plt.figure(1, figsize=(5, 5), dpi=90)
     ax = fig.add_subplot(111)
     ax.scatter(x, y)
     ax.set_title('Punkter')
+
+def plot_linje(linje):
+    """
+    Plot en linje
+    """
+    x = [punkt[0] for punkt in linje]
+    y = [punkt[1] for punkt in linje]
+    fig = plt.figure(1, figsize=(5, 5), dpi=90)
+    ax = fig.add_subplot(111)
+    ax.plot(x, y, '-')
+    ax.set_title('Linje')
 ```
 
 </p>
@@ -734,20 +745,10 @@ def plot_punkter(punkter: List[Point]):
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.1 Punkter`_
 
-Vi skal jobbe med biblioteket som heter `Shapely`. Dette er et åpent bibliotek for manipulering og analyse av geometri.
-Biblioteket er ferdig installert i Google Colab.
-
-Vi ønsker muligheten til å jobbe med punkter og skriver derfor følgende i første rute:
+Et punkt har en x-koordinat og en y-koordinat. Vi kan dermed se på et punkt som en liste med to elementer
 
 ```python
-from shapely.geometry import Point
-```
-
-Nå har vi tilgang til å bruke `Point`.
-Punkter opprettes ved å lage et `Point` objekt og lagre det i en variabel.
-
-```python
-punkt = Point(2,2)
+punkt = [2,2]
 ```
 
 Vi har lagd klar noen funksjoner for å enkelt plotte dataene.
@@ -770,10 +771,10 @@ Vi kan opprette en liste og legge til så mange punkter du orker.
 
 ```python
 punkter = []
-punkter.append(Point(1,1))
-punkter.append(Point(-1,10))
-punkter.append(Point(5,7))
-punkter.append(Point(3,2))
+punkter.append([1,1])
+punkter.append([-1,10])
+punkter.append([5,7])
+punkter.append([3,2])
 
 plot_punkter(punkter)
 ```
@@ -814,8 +815,8 @@ sirkelpunkter = []
 antallPunkter = 16
 
 for x in range(0, antallPunkter):
-  punkt = Point(math.sin(x / antallPunkter * 2 * math.pi),
-                math.cos(x / antallPunkter * 2 * math.pi))
+  punkt = [math.sin(x / antallPunkter * 2 * math.pi),
+                math.cos(x / antallPunkter * 2 * math.pi)]
   
   sirkelpunkter.append(punkt)
   
@@ -850,6 +851,10 @@ print(punkter[0].distance(punkter[1]))
 
 </p>
 </details>
+
+### Linjer
+
+Bruk av Shapely.LineString
 
 ### Polygoner
 
