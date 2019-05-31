@@ -552,11 +552,11 @@ print(førsteby)
 **NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
 **Oppgave 2.7**
-**TODO** Legg til en oppgave om .append() og .remove()
 
-1. Lag en liste med 10 forskjellige heltall mellom 0 og 100 i tilfeldig rekkefølge.
-2. Print listen du har laget.
-3. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser.
+1. Start med en tom liste ved å bruke `talliste = []`
+2. Legg til 10 forskjellige heltall mellom 0 og 100 ved bruk av `.append()`
+3. Print listen du har laget
+4. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser
 
 <details><summary>Løsning Oppgave 2.7</summary>
 <p>
@@ -762,8 +762,11 @@ Du vil nå få opp en graf tilsvarende denne:
 
 [Punkt]: ./images/punkt.png
 
-Et enkelt punkt er jo ganske kjedelig så la oss legge inn en haug!
-Opprett en liste og legg til så mange punkter du orker.
+Det er mulig å legge inn flere punkt i samme graf. Å bruke `plot_punkt()` for hvert enkelt punkt vil resultere i en advarsel, og er veldig lite praktisk.
+
+Vi har derfor laget en funksjon for å plotte mange punkter sammen `plot_punkter()`. Denne funksjonen tar inn en liste som input, og plotter alle punktene i listen.
+
+Vi kan opprette en liste og legge til så mange punkter du orker.
 
 ```python
 punkter = []
@@ -775,15 +778,17 @@ punkter.append(Point(3,2))
 plot_punkter(punkter)
 ```
 
-_Legg merke til at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
+_Husk at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 
 ![Punkter]
 
 [Punkter]: ./images/punkter.png
 
-#### Oppgave 3.1
+#### Oppgave 3.1.1
 
-<details><summary>Løsning Oppgave 3.1</summary>
+Lag en liste med 10 punkter ved å bruke `.append()` og plot deretter punktene med `plot_punkter()`.
+
+<details><summary>Løsning Oppgave 3.1.1</summary>
 <p>
 
 ```python
@@ -793,11 +798,46 @@ _Legg merke til at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 </p>
 </details>
 
+#### Oppgave 3.1.2
+
+Vanskelig bonusoppgave.
+Plot 16 punkter jevnt fordelt i en sirkel ved hjelp av en `for`-løkke.
+Tips: Bruk sinus og cosinus funksjonene i `math` modulen.
+
+<details><summary>Løsningsforslag Oppgave 3.1.2</summary>
+<p>
+
+```python
+import math
+
+sirkelpunkter = []
+antallPunkter = 16
+
+for x in range(0, antallPunkter):
+  punkt = Point(math.sin(x / antallPunkter * 2 * math.pi),
+                math.cos(x / antallPunkter * 2 * math.pi))
+  
+  sirkelpunkter.append(punkt)
+  
+plot_punkter(sirkelpunkter)
+```
+
+![Sirkel]
+
+[Sirkel]: ./images/sirkel.png
+
+</p>
+</details>
+
 ### Kalkulering av distanse mellom punkter
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.2 Kalkulering av distanse`_
 **TODO**
 Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
+
+```python
+print(punkter[0].distance(punkter[1]))
+```
 
 #### Oppgave 3.2
 
@@ -825,37 +865,6 @@ Lage polygoner som består av flere punkter og vise de i plot.
 ```python
 
 ```
-
-</p>
-</details>
-
-#### Oppgave 3.4
-
-Vanskelig bonusoppgave.
-Plot 16 punkter jevnt fordelt i en sirkel ved hjelp av en `for`-løkke.
-Tips: Bruk sinus og cosinus funksjonene i `math` modulen.
-
-<details><summary>Løsningsforslag Oppgave 3.4</summary>
-<p>
-
-```python
-import math
-
-sirkelpunkter = []
-antallPunkter = 16
-
-for x in range(0, antallPunkter):
-  punkt = Point(math.sin(x / antallPunkter * 2 * math.pi),
-                math.cos(x / antallPunkter * 2 * math.pi))
-  
-  sirkelpunkter.append(punkt)
-  
-plot_punkter(sirkelpunkter)
-```
-
-![Sirkel]
-
-[Sirkel]: ./images/sirkel.png
 
 </p>
 </details>
