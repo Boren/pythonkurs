@@ -687,6 +687,10 @@ print(talliste)
 </p>
 </details>
 
+### For-løkker
+
+TODO
+
 <div style="page-break-after: always;"></div>
 
 ## Geometri
@@ -933,7 +937,7 @@ print((breddegrad, lengdegrad))
 (59.91029353312019, 10.763368458155954)
 ```
 
-Vi kan og bruke en liste med adresser og ved hejlp av for-løkker geokode disse:
+Vi kan også bruke en liste med adresser og ved hjelp av for-løkker geokode disse:
 
 ```python
 adresser = ["Schweigaardsgate 28, Oslo", "Gabels Gate 21, Oslo", "Austhallet 17, Klepp Stasjon"]
