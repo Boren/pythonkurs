@@ -1197,7 +1197,7 @@ _location_ er stedet kartet skal starte i når det åpnes. Denne verdien er en p
 
 ![Kart]
 
-[Kart]: ./images/kart.PNG
+[Kart]: ./images/kart.png
 
 Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
 
