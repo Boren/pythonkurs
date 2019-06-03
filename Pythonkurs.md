@@ -802,7 +802,8 @@ _Husk at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 
 #### Oppgave 3.1.1
 
-Lag en liste med 10 punkter ved å bruke `.append()` og plot deretter punktene med `plot_punkter()`.
+Lag en liste med 8 punkter ved å bruke `.append()` slik at de tilsvarer hjørnene i en oktogon. Plot deretter punktene med `plot_punkter()`.
+
 
 <details><summary>Løsning Oppgave 3.1.1</summary>
 <p>
@@ -877,8 +878,11 @@ plot_punkter(sirkelpunkter)
 </p>
 </details>
 
+---
+
 ### Linjer
 
+Et linjestykke kan defineres med to punkter (start og sluttpunkt). Ved å legg til flere punkter kan vi lage en linje med flere linjestykker
 Bruker `plot_linje()`. Input er en liste med punkter.
 
 ```python
@@ -895,25 +899,55 @@ plot_linje(punkter)
 
 [Linje]: ./images/linje.PNG
 
-**TODO**
-
 #### Oppgave 3.2
+
+1. Har rekkefølgen på punktene du legger til noe å si?
+2. Kan man lage linjer som krysser seg selv?
+3. Forsøk å reprodusere denne linjen. Er det flere måter å gjøre dette på?
+
+![Linje2]
+
+[Linje2]: ./images/linje2.PNG
 
 <details><summary>Løsning Oppgave 3.2</summary>
 <p>
 
-```python
+1. Ja, rekkefølgen har noe å si. Det første punktet i listen vil være starten av linjen, og linjen følger deretter punktene i den rekkefølgen de ligger i.
+2. Ja, vi kan lage linjer som krysser seg selv. F.eks ved å endre på rekkefølgen på linjen fra eksempelet:
 
+```python
+punkter = []
+punkter.append([1,1])
+punkter.append([5,7])
+punkter.append([3,2])
+punkter.append([-1,10])
+
+plot_linje(punkter)
+   ```
+
+3. Trikset er å legge inn det første punktet en gang til på slutten.
+
+```python
+punkter = []
+punkter.append([1,1])
+punkter.append([5,7])
+punkter.append([3,2])
+punkter.append([-1,10])
+punkter.append([1,1])
+
+plot_linje(punkter)
 ```
+
+Siden dette er en sluttet krets, kan vi selvfølgelig starte i hvilket som helst punkt på linjen.
 
 </p>
 </details>
 
+---
+
 ### Polygoner
 
 _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.3 Polygoner`_
-**TODO**
-Lage polygoner som består av flere punkter og vise de i plot.
 
 Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon`:
 
