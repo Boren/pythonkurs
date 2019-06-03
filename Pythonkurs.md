@@ -2,9 +2,9 @@
 
 ## Behandling av geografiske data i Python
 
-4 moduler. 8 timer totalt.
+4 moduler. 9 timer totalt.
 
-Det er litt knapt med tid så kurset kommer til å gå relativt raskt og enkelte komponenter får ikke den fulle forklaringen de egentlig trenger. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
+Kurset kommer til å gå relativt raskt for å rekke alt på en dag. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
 
 Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen enkel. Dette gjør og at vi på forhånd kan installere modulene som kreves og legge inn startmaler til oppgaver.
 
@@ -16,75 +16,75 @@ Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe vi
 
 ### 1. Introduksjon til Python og miljøet (1 time)
 
-- Jupyter
-  
-  Hva er jupyter notebooks? Hvilke fordeler gir det meg? Hvordan brukes de?
+#### Jupyter
 
-- “Hello World!”
-  
-  Testkjøring av enkelt script og forklaring av hvordan python fungerer og tolker koden
+Hva er jupyter notebooks? Hvilke fordeler gir det meg? Hvordan brukes de?
 
-### 2. Programmeringskonsepter (2+ timer)
+#### “Hello World!”
 
-- Variabler
-  
-  Hva er variabler? Hvordan bruke dem? Hvorfor bruke dem?
+Testkjøring av enkelt script og forklaring av hvordan python fungerer og tolker koden
 
-- Datatyper
-  
-  Forskjellen mellom datatyper
+### 2. Programmeringskonsepter (3 timer)
 
-- Aritmetikk
-  
-  Enkle beregninger i Python
+#### Variabler
 
-- Bruk av forhåndslagde og innebygde funksjoner
-  
-  Fordeler. Hvordan bruke.
+Hva er variabler? Hvordan bruke dem? Hvorfor bruke dem?
 
-- Input
+#### Datatyper
 
-  Hva kan det brukes til. Fordeler med interaksjon mens et script kjører
+Forskjellen mellom datatyper
 
-- Lister
-  
-  Hva er lister? Hvordan bruke dem? Hvilke fordeler gir det å lagre verdier i lister?
+#### Aritmetikk
 
-- Betingelser
-  
-  Logiske valg og gjentakelser. "If-setning" og "for-løkker".
+Enkle beregninger i Python
 
-- Imports
-  
-  Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
+#### Bruk av forhåndslagde og innebygde funksjoner
+
+Fordeler. Hvordan bruke.
+
+#### Input
+
+Hva kan det brukes til. Fordeler med interaksjon mens et script kjører
+
+#### Lister
+
+Hva er lister? Hvordan bruke dem? Hvilke fordeler gir det å lagre verdier i lister?
+
+#### Betingelser
+
+Logiske valg og gjentakelser. `if`-setninger og `for`-løkker.
+
+#### Imports
+
+Overordnet forklaring av imports. Ingen dypdykk i hvordan man selv kan lage. Kun bruk.
 
 ### 3. Geometri (2 timer)
 
-- Punkter
-  
-  Hvordan lage punkter og vise de i et plot.
+#### Punkter
 
-- Linjer
-  
-  Lage lister med flere punkter. Tegne linjer.
+Hvordan lage punkter og vise de i et plot.
 
-- Polygoner
-  
-  Lage polygoner som består av flere punkter og vise de i plot.
+#### Linjer
+
+Lage lister med flere punkter. Tegne linjer.
+
+#### Polygoner
+
+Lage polygoner som består av flere punkter og vise de i plot.
 
 ### 4. Kart med OpenStreetMap (3 timer)
 
-- Geokoding
-  
-  Geokoding ved hjelp av webtjenester.
+#### Geokoding
 
-- Dynamiske kart med Folium
-  
-  Hvordan vise et kart.
+Geokoding ved hjelp av webtjenester.
 
-- Markers og Shapes
-  
-  Legge inn enkle elementer i kartet og vise dem.
+#### Dynamiske kart med Folium
+
+Hvordan vise et kart.
+
+#### Markers og Shapes
+
+Legge inn enkle elementer i kartet og vise dem.
 
 <div style="page-break-after: always;"></div>
 
@@ -98,13 +98,11 @@ Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe vi
 - Støttet av de fleste store GIS verktøy
 - Python passerte nylig Java i popularitet og er nå #1
 
-(Vise noen bruksområder for Python i vår hverdag?)
-
 ## Jupyter Notebooks
 
 Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort. Det finnes flere måter å kjøre Jupyter Notebooks på.
 
-I dette kurset skal vi bruke **Google Colaboratory**.
+I dette kurset skal vi bruke **Google Colaboratory** som inneholder de aller meste du trenger av pakker. Det er enkelt å lagre og dele kode her.
 
 ### Opprett eget Jupytermiljø
 
@@ -185,12 +183,6 @@ print("verden!")
 </p>
 </details>
 
----
-
-Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
-<https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq>
-Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
-
 <div style="page-break-after: always;"></div>
 
 ## Programmeringskonsepter
@@ -200,21 +192,20 @@ Denne modulen gjennomgår grunnleggende programmeringskonsepter.
 
 ### Variabler
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.1 Variabler`_
 En variabel er et sted hvor du kan lagre data for senere bruk.
 De gir oss og muligheten til å gi beskrivende navn til dataen vi lagrer.
 
 Lag en variabel som heter `navn` som har verdien til navnet ditt:
 
 ```python
-navn = "Fredrik"
+navn = "William"
 ```
 
 Kjør ruten. De vil nå ikke komme noe resultat siden vi ikke bruker `print`.
 Legg inn en `print` i samme rute slik at vi kan se hva verdien av variabelen er:
 
 ```python
-navn = "Fredrik"
+navn = "William"
 print(navn)
 ```
 
@@ -227,8 +218,8 @@ Lag to variabler med ditt _fornavn_ og _etternavn_. Print disse på to linjer.
 <p>
 
 ```python
-fornavn = "Fredrik"
-etternavn = "Bore"
+fornavn = "William"
+etternavn = "Wisting"
 print(fornavn)
 print(etternavn)
 ```
@@ -240,19 +231,17 @@ print(etternavn)
 
 ### Datatyper
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.2 Datatyper`_
-
 Programmeringsspråk skiller mellom forskjellige typer data.
 Hovedtypene som blir brukt i python er:
 
 - Tekststreng
-  - Navn ("Fredrik")
-  - Steder ("Oslo")
+  - Navn ("William")
+  - Steder ("Larvik")
 - Heltall
-  - Alder (25)
+  - Alder (61)
   - Årstall (2019)
 - Flyttall
-  - Høyde (1.75)
+  - Høyde (1.91)
 - Boolean
   - _True_ | _False_
 
@@ -294,7 +283,7 @@ Kan du forklare hva som skjer? (_En av de vil gi feilmelding_)
 
 `22` - Satt sammen to tekststrenger
 
-`2 + 2` - Printet en hel sammenhengende tekststrengen
+`2 + 2` - Printet en hel sammenhengende tekststreng
 
 </p>
 </details>
@@ -312,10 +301,10 @@ Lag variabler for _navn_, _alder_, _årstall_ og _høyde_.
 <p>
 
 ```python
-navn = "Fredrik"
-fødselsår = 1993
+navn = "William"
+fødselsår = 1958
 årstall = 2019
-høyde = 1.75
+høyde = 1.91
 ```
 
 </p>
@@ -324,8 +313,6 @@ høyde = 1.75
 ---
 
 ### Aritmetikk
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.3 Aritmetikk`_
 
 Matematikk er viktig i dataverdenen og ikke minst når du koder.
 Heldigvis er det veldig enkelt.
@@ -338,18 +325,18 @@ Lag en ny rute og skriv inn følgende:
 ```
 
 Trykk deretter run. Resultatet av kalkulasjonen vises nå under ruta.
-Symbolene i Python for de vanligste operasjonene er (Arithmetic Operators):
+Symbolene i Python for de vanligste operasjonene er:
 
 - `+` - Addisjon
 - `-` - Subtraksjon
 - `*` - Multiplikasjon
 - `/` - Divisjon
-- `**`- Potens
+- `**` - Potens
 - `%` - Modulo
 
 Bytt gjerne regneart i eksemplet og se hvordan resultatet endrer seg.
 
-Resultatet av en kalkulasjon kan og lagres i en variabel slik at du kan bruke den senere.
+Resultatet av en kalkulasjon kan lagres i en variabel slik at du kan bruke den senere.
 
 Du kan også bruke variablene du har definert tidligere til å beregne nye variabler. For eksempel kan du regne ut hvor mange år du fyller i år på følgende måte:
 
@@ -362,41 +349,53 @@ print(alder)
 
 #### Oppgave 2.4
 
-1. Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.3
-
-2. Kan man bruke noen aritmetiske operasjoner...
-
-    1. mellom to tekststrenger?
-    2. mellom en tekststreng og et heltall?
+Beregn og print ut hvor mange *centimeter* du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.3
 
 <details><summary>Løsning Oppgave 2.4</summary>
 <p>
 
-- Deloppgave 1
-
 ```python
-høyde = 1.75
+høyde = 1.91
 
 høydeimeter = 2 - høyde
 print(høydeimeter * 100)
 ```
 
-- Deloppgave 2.1
-Ja, man kan plusse sammen to strenger
+</p>
+</details>
+
+#### Oppgave 2.5
+
+Kan man bruke noen aritmetiske operasjoner...
+
+  1. mellom to tekststrenger?
+  2. mellom en tekststreng og et heltall?
+
+Test det gjerne i notebooken!
+
+<details><summary>Løsning Oppgave 2.5</summary>
+<p>
+
+1. Ja, man kan plusse sammen to strenger
 
 ```python
 print("Streng1 " + "Streng2")
 ```
 
-`Streng1 Streng2`
+```plaintext
+Streng1 Streng2
+```
 
-- Deloppgave 2.2
+2. Ja, man kan multiplisere en streng slik at den repeterer
 
 ```python
 print("Streng1 " * 3)
 ```
 
-`Streng1 Streng1 Streng1 `
+```plaintext
+Streng1 Streng1 Streng1
+```
+
 </p>
 </details>
 
@@ -404,15 +403,14 @@ print("Streng1 " * 3)
 
 ### Bruk av forhåndlagde og innebygde funksjoner
 
-**TODO**
 Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk. Enhver funksjon vil alltid ha en input og en output. Python har massevis av innebygde funksjoner, som hjelper deg med enkel funksjonalitet. Noen viktige eksempler:
 
 - `print()`
-  
+
   Tar en variabel som input, og printer dette til output
 
 - `str()`
-  
+
   Gjør om et tall til en tekststreng
 
 - `int()`
@@ -420,7 +418,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
   Gjør om en tekststreng til et heltall
 
 - `len()`
-  
+
   Gir deg lengden på variabelen du sender inn
 
 - `input()`
@@ -475,7 +473,7 @@ Etter at en linje som inneholder funksjonen har kjørt venter programmet på at 
 ```python
 tallstreng = input("Skriv inn et tall: ")
 tall = int(tallstreng)
-print(2*tall)
+print(2 * tall)
 ```
 
 </p>
@@ -484,8 +482,6 @@ print(2*tall)
 ---
 
 ### Lister
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.4 Lister`_
 
 Det kan noen ganger være lurt å lagre data i lister for å ha bedre struktur på dataene.
 
@@ -581,8 +577,6 @@ Husk at Python har null-basert indeksering, så det sjette tallet er på indeks 
 ---
 
 ### Betingelser
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.5 Betingelser`_
 
 Betingelser er et av de viktigste konseptene å forstå.
 Det er heldigvis veldig enkelt og logisk i Python.
@@ -871,8 +865,6 @@ def plot_polygon(linje):
 
 ### Punkter
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.1 Punkter`_
-
 Et punkt har en x-koordinat og en y-koordinat. Vi kan dermed se på et punkt som en liste med to elementer
 
 ```python
@@ -916,7 +908,6 @@ _Husk at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 #### Oppgave 3.1.1
 
 Lag en liste med 8 punkter ved å bruke `.append()` slik at de tilsvarer hjørnene i en oktogon. Plot deretter punktene med `plot_punkter()`.
-
 
 <details><summary>Løsning Oppgave 3.1.1</summary>
 <p>
@@ -1031,9 +1022,9 @@ plot_linje(punkter)
 ```python
 punkter = []
 punkter.append([ 1,  1])
-punkter.append([-1, 10])
 punkter.append([ 5,  7])
 punkter.append([ 3,  2])
+punkter.append([-1, 10])
 
 plot_linje(punkter)
 ```
@@ -1059,8 +1050,6 @@ Siden dette er en sluttet krets, kan vi selvfølgelig starte i hvilket som helst
 ---
 
 ### Polygoner
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.3 Polygoner`_
 
 Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon`:
 
@@ -1112,7 +1101,7 @@ tokenforespørsel = requests.get("https://services.geodataonline.no/arcgis/token
 token = tokenforespørsel.json()['token']
 
 def geokoding(søketekst: str, koordinatsystem = 4326):
-    """"
+    """
     Geokod ved hjelp av fritekst søk
     Standard koordinatsystem er UTM-33
     For bruk av WGS 84 bruk ID: 4326
@@ -1136,8 +1125,6 @@ Fyll deretter inn brukernavn og passord.
 ---
 
 ### Dynamiske kart med Folium
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
 
 For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette baserer seg på `leaflet` som noen kanskje er kjent med.
 
@@ -1278,8 +1265,6 @@ TODO Oppgave med forløkke
 ---
 
 ### Markers og Shapes
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
 
 Det er enkelt å legge til egendefinerte markers med masse forskjellige valg.
 Dette gjøres ved hjelp av `folium.Marker()`.
