@@ -1030,23 +1030,23 @@ plot_linje(punkter)
 
 ```python
 punkter = []
-punkter.append([1,1])
-punkter.append([5,7])
-punkter.append([3,2])
-punkter.append([-1,10])
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
 
 plot_linje(punkter)
-   ```
+```
 
 3. Trikset er å legge inn det første punktet en gang til på slutten.
 
 ```python
 punkter = []
-punkter.append([1,1])
-punkter.append([5,7])
-punkter.append([3,2])
-punkter.append([-1,10])
-punkter.append([1,1])
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
+punkter.append([ 1,  1])
 
 plot_linje(punkter)
 ```
@@ -1135,6 +1135,92 @@ Fyll deretter inn brukernavn og passord.
 
 ---
 
+### Dynamiske kart med Folium
+
+_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
+
+For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette baserer seg på `leaflet` som noen kanskje er kjent med.
+
+For å opprette et kart med folium trenger du bare skrive følgende:
+
+```python
+import folium
+m = folium.Map(location = [ breddegrad, lengdegrad ])
+m
+```
+
+Tips: `m` som står alene er for å vise kartet i notebooks.
+
+_location_ er stedet kartet skal starte i når det åpnes. Denne verdien er en punktverdi med x,y-koordinater som breddegrad og lengdegrad.
+
+![Kart]
+
+[Kart]: ./images/kart.png
+
+Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
+
+```text
+tiles - Valg av basemap
+zoom_start - Zoomnivå
+```
+
+Mulige Basemaps:
+
+- 'openstreetmap',
+- 'mapquestopen',
+- 'MapQuest Open Aerial',
+- 'Mapbox Bright',
+- 'Mapbox Control Room',
+- 'stamenterrain',
+- 'stamentoner',
+- 'stamenwatercolor',
+- 'cartodbpositron',
+- 'cartodbdark_matter'
+
+Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon.
+
+**NB!** _Ikke alle bakgrunnskart fungerer på alle zoomnivåer._
+
+Eksempel:
+
+```python
+import folium
+m = folium.Map(location = [ 58.7692591, 5.6675446 ],
+               tiles = 'Stamen Terrain',
+               zoom_start = 15)
+m
+```
+
+**NB!** _Husk å importere folium før du går igang med oppgavene._
+
+#### Oppgave 4.2.1
+
+Bruk en bredde- og lengdegraden som du fant til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og basemap.
+
+Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
+
+<details><summary>Løsning Oppgave 4.2.1</summary>
+<p>
+
+```python
+import folium
+
+m = folium.Map(location=[59.9103, 10.7634],
+    tiles='Stamen Toner',
+    zoom_start=16
+)
+
+folium.TileLayer('openstreetmap').add_to(m)
+folium.LayerControl().add_to(m)
+
+m
+```
+
+</p>
+</details>
+
+---
+
 ### Geokoding
 
 Geokoding er en kjent del av GIS-hverdagen. Fordelen med Python og koding er at du kan automatisere geokoding av store datasett.
@@ -1189,87 +1275,7 @@ print((breddegrad, lengdegrad))
 
 TODO Oppgave med forløkke
 
-### Dynamiske kart med Folium
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
-
-For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette baserer seg på `leaflet` som noen kanskje er kjent med.
-
-For å opprette et kart med folium trenger du bare skrive følgende:
-
-```python
-import folium
-m = folium.Map(location = [ lengdegrad, breddegrad ])
-m
-```
-
-Tips: `m` som står alene er for å vise kartet i notebooks.
-
-![Kart]
-
-[Kart]: ./images/kart.png
-
-Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
-
-```text
-tiles - Valg av basemap
-zoom_start - Zoomnivå
-```
-
-Mulige Basemaps:
-
-- 'openstreetmap',
-- 'mapquestopen',
-- 'MapQuest Open Aerial',
-- 'Mapbox Bright',
-- 'Mapbox Control Room',
-- 'stamenterrain',
-- 'stamentoner',
-- 'stamenwatercolor',
-- 'cartodbpositron',
-- 'cartodbdark_matter'
-
-Bruk `folium.LatLngPopup().add_to(m)` eller `m.add_child(folium.LatLngPopup())` for å finne ønsket posisjon.
-
-**NB!** _Ikke alle bakgrunnskart fungerer på alle zoomnivåer._
-
-Eksempel:
-
-```python
-import folium
-m = folium.Map(location = [ 58.7692591, 5.6675446 ],
-               tiles = 'Stamen Terrain',
-               zoom_start = 15)
-m
-```
-
-**NB!** _Husk å importere folium før du går igang med oppgavene._
-
-#### Oppgave 4.2.1
-
-Bruk lengde- og breddegraden du geokodet i forrige oppgave til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og basemap.
-
-Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
-
-<details><summary>Løsning Oppgave 4.2.1</summary>
-<p>
-
-```python
-import folium
-
-m = folium.Map(location=[59.9103, 10.7634],
-    tiles='Stamen Toner',
-    zoom_start=16
-)
-
-folium.TileLayer('openstreetmap').add_to(m)
-folium.LayerControl().add_to(m)
-
-m
-```
-
-</p>
-</details>
+---
 
 ### Markers og Shapes
 
