@@ -1051,7 +1051,9 @@ Siden dette er en sluttet krets, kan vi selvfølgelig starte i hvilket som helst
 
 ### Polygoner
 
-Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon`:
+En polygon består av sammenhengende linjestykker. Siden linjer kan beskrives med en liste med punkter, har også polygoner denne egenskapen.
+
+En polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon()`:
 
 ```python
 punkter = []
@@ -1067,17 +1069,70 @@ plot_polygon(punkter)
 
 [Polygon]: ./images/polygon.PNG
 
-#### TODO Oppgave 3.3
+#### Oppgave 3.3.1
 
-<details><summary>Løsning Oppgave 3.3</summary>
+Lag en polygon med 4 hjørner, og plott den. Har rekkefølgen på punktene (hjørnene) noe å si? Opprett og plott to polygoner kun ved å endre rekkefølgen på punktene.
+
+<details><summary>Løsning Oppgave 3.3.1</summary>
 <p>
 
 ```python
+punkter = []
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
 
+plot_polygon(punkter)
+```
+
+Man får to polygoner dersom man bruker en linje som krysser seg selv.
+
+```python
+punkter = []
+punkter.append([ 1,  1])
+punkter.append([ 3,  2])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+
+plot_polygon(punkter)
 ```
 
 </p>
 </details>
+
+#### Oppgave 3.3.2
+
+Speil de to polygonene om x-aksen ved hjelp av en for-løkke. _Tips: Speiling om x-aksen gjøres ved å endre fortegn i y-verdiene for hvert punkt_
+
+<details><summary>Løsning Oppgave 3.3.2</summary>
+<p>
+
+```python
+punkter1 = []
+punkter1.append([ 1,  1])
+punkter1.append([ 3,  2])
+punkter1.append([-1, 10])
+punkter1.append([ 5,  7])
+
+plot_polygon(punkter1)
+
+punkter2 = []
+
+for punkt in punkter1:
+  punkter2.append([punkt[0],punkt[1]*-1])
+
+plot_polygon(punkter2)
+```
+
+![Polygon3]
+
+[Polygon3]: ./images/polygon3.PNG
+
+</p>
+</details>
+
+---
 
 <div style="page-break-after: always;"></div>
 
