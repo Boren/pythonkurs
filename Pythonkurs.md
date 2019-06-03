@@ -893,7 +893,7 @@ plot_linje(punkter)
 
 ![Linje]
 
-[Linje]: ./images/linje.png
+[Linje]: ./images/linje.PNG
 
 **TODO**
 
@@ -929,7 +929,7 @@ plot_polygon(punkter)
 
 ![Polygon]
 
-[Polygon]: ./images/polygon.png
+[Polygon]: ./images/polygon.PNG
 
 #### TODO Oppgave 3.3
 
