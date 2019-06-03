@@ -64,9 +64,9 @@ Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe vi
   
   Hvordan lage punkter og vise de i et plot.
 
-- Kalkulering av distanse mellom punkter
+- Linjer
   
-  Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
+  Lage lister med flere punkter. Tegne linjer.
 
 - Polygoner
   
@@ -805,11 +805,43 @@ Lag en liste med 10 punkter ved å bruke `.append()` og plot deretter punktene m
 
 #### Oppgave 3.1.2
 
+Finn distansen mellom punktene
+
+```python
+Punkt1 = [3,2]
+Punkt2 = [5,7]
+```
+
+ved hjelp av Pytagoras. _Tips: Bruk `import math` og `math.sqrt()` for å finne roten_
+
+<details><summary>Løsning Oppgave 3.1.2</summary>
+<p>
+
+```python
+import math
+
+Punkt1 = [3,2]
+Punkt2 = [5,7]
+
+distanse = math.sqrt((Punkt1[0]-Punkt2[0])**2 + (Punkt1[1]-Punkt2[1])**2)
+
+print(distanse)
+```
+
+`5.385164807134504`
+
+_Fungerer også med negative verdier i punkt-koordinatene._
+
+</p>
+</details>
+
+#### Oppgave 3.1.3
+
 Vanskelig bonusoppgave.
 Plot 16 punkter jevnt fordelt i en sirkel ved hjelp av en `for`-løkke.
-Tips: Bruk sinus og cosinus funksjonene i `math` modulen.
+Tips: Bruk sinus (`math.sin`) og cosinus (`math.cos`) funksjonene i `math` biblioteket.
 
-<details><summary>Løsningsforslag Oppgave 3.1.2</summary>
+<details><summary>Løsningsforslag Oppgave 3.1.3</summary>
 <p>
 
 ```python
@@ -834,15 +866,25 @@ plot_punkter(sirkelpunkter)
 </p>
 </details>
 
-### Kalkulering av distanse mellom punkter
+### Linjer
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.2 Kalkulering av distanse`_
-**TODO**
-Lage flere punkter. Tegner linjer mellom og kalkulere distanser.
+Bruker `plot_linje()`. Input er en liste med punkter.
 
 ```python
-print(punkter[0].distance(punkter[1]))
+punkter = []
+punkter.append([1,1])
+punkter.append([-1,10])
+punkter.append([5,7])
+punkter.append([3,2])
+
+plot_linje(punkter)
 ```
+
+![Linje]
+
+[Linje]: ./images/linje.png
+
+**TODO**
 
 #### Oppgave 3.2
 
@@ -855,10 +897,6 @@ print(punkter[0].distance(punkter[1]))
 
 </p>
 </details>
-
-### Linjer
-
-Bruk av Shapely.LineString
 
 ### Polygoner
 
