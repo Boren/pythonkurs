@@ -738,6 +738,17 @@ def plot_linje(linje):
     ax = fig.add_subplot(111)
     ax.plot(x, y, '-')
     ax.set_title('Linje')
+
+def plot_polygon(linje):
+    """
+    Plot en polygon
+    """
+    polygon = plt.Polygon(linje, alpha=0.5)
+    fig = plt.figure(1, figsize=(5, 5), dpi=90)
+    ax = fig.add_subplot(111)
+    ax.add_patch(polygon)
+    plt.autoscale(enable=True, axis='both', tight=None)
+    ax.set_title('Polygon')
 ```
 
 </p>
@@ -904,7 +915,23 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 **TODO**
 Lage polygoner som består av flere punkter og vise de i plot.
 
-#### Oppgave 3.3
+Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon`:
+
+```python
+punkter = []
+punkter.append([1,1])
+punkter.append([-1,10])
+punkter.append([5,7])
+punkter.append([3,2])
+
+plot_polygon(punkter)
+```
+
+![Polygon]
+
+[Polygon]: ./images/polygon.png
+
+#### TODO Oppgave 3.3
 
 <details><summary>Løsning Oppgave 3.3</summary>
 <p>
