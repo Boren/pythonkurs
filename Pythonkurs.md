@@ -551,7 +551,7 @@ print(førsteby)
 
 **NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
-**Oppgave 2.7**
+#### Oppgave 2.7
 
 1. Start med en tom liste ved å bruke `talliste = []`
 2. Legg til 10 forskjellige heltall mellom 0 og 100 ved bruk av `.append()`
@@ -562,7 +562,7 @@ print(førsteby)
 <p>
 
 ```python
-talliste = [11,2,84,72,36,90,15,82,10,55]
+talliste = [11, 2, 84, 72, 36, 90, 15, 82, 10, 55]
 print(talliste)
 talliste.sort()
 sjettetallet = talliste[5]
@@ -616,21 +616,21 @@ Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se 
 
 1. Lag en liste over 3 land du har besøkt
 2. Lag en ny variabel med et land du har besøkt (Det kan være et land som ligger i listen, eller et nytt land)
-3. Lag logikk for
+3. Skriv logikk for
 
 ```plaintext
 Hvis landet finnes i listen over land jeg har besøkt:
-  print("Landet ligger allerede i listen")
+  Skriv ut teksten: "Landet ligger allerede i listen"
 Dersom den ikke finnes:
   Legg til landet i listen (Hint: Bruk .append())
-  Print listen over land
+  Skriv ut listen over land
 ```
 
 <details><summary>Løsning Oppgave 2.8</summary>
 <p>
 
 ```python
-land = ["Canada","Brasil","Italia"]
+land = ["Canada", "Brasil", "Italia"]
 nyttland = "Sveits"
 
 if nyttland in land:
@@ -655,7 +655,7 @@ F.eks:
 from math import pi
 ```
 
-Denne vil importere funksjonalitet for å bruke _**pi**_ fra biblioteket _**math**_. Dette er et bibliotek for bruk av en rekke enkle matematiske funksjonaliteter. For å importere all funksjonalitet fra et bibliotek på en gang kan man bruke:
+Denne vil importere funksjonalitet for å bruke `pi` fra biblioteket `math`. Dette er et bibliotek for bruk av en rekke enkle matematiske funksjonaliteter. For å importere all funksjonalitet fra et bibliotek på en gang kan man bruke:
 
 ```python
 from math import *
@@ -667,19 +667,20 @@ eller
 import math
 ```
 
-_*NB! I så fall må man bruke 'math.pi'*_
+_*NB! Hvis bibloteket blir importert på denne måten brukes navnet på biblioteket foran: `math.pi`*_
 
 #### Oppgave 2.9
 
-Importer funksjonaliteten _shuffle_ fra biblioteket _random_. Deretter kan du bruke funksjonen _shuffle()_. Bruk denne til å stokke om listen med tall fra Oppgave 2.7
+Importer funksjonaliteten `shuffle` fra biblioteket `random`. Deretter kan du bruke funksjonen `shuffle()`. Bruk denne til å stokke om listen med tall fra Oppgave 2.7
 
 <details><summary>Løsning Oppgave 2.9</summary>
 <p>
 
 ```python
-talliste = [11,2,84,72,36,90,15,82,10,55]
-
 from random import shuffle
+
+talliste = [11, 2, 84, 72, 36, 90, 15, 82, 10, 55]
+
 shuffle(talliste)
 print(talliste)
 ```
@@ -689,7 +690,119 @@ print(talliste)
 
 ### For-løkker
 
-TODO
+For-løkker brukes for å repetere handlinger uten at vi må skrive eller kopiere kodelinger mange ganger. Det gir oss muligheten til for eksempel utføre en kalkulasjon på alle tallene i en liste eller geokode alle adressene i en liste.
+
+En for-løkke ser slik ut:
+
+```python
+liste = ["a", "b", "c", "d"]
+
+for bokstav in liste:
+  print(bokstav)
+```
+
+```plaintext
+a
+b
+c
+d
+```
+
+Dersom du skulle utført en kalkulasjon på alle elementene i en liste manuelt ville det kanskje sett sånn ut:
+
+```python
+talliste = [11, 2, 84, 72, 36, 90, 15, 82, 10, 55]
+sum = 0
+
+tall1 = tallliste[0]
+tall1 = tall1 * 2
+sum = sum + tall1
+
+tall2 = tallliste[0]
+tall2 = tall2 * 2
+sum = sum + tall2
+
+tall3 = tallliste[0]
+tall3 = tall3 * 2
+sum = sum + tall3
+
+...
+
+print(sum)
+```
+
+Når du endrer denne til en for-løkke vil den se sånn ut:
+
+```python
+talliste = [11, 2, 84, 72, 36, 90, 15, 82, 10, 55]
+sum = 0
+
+for tall in talliste:
+  tall = tall * 2
+  sum = sum + tall
+
+print(sum)
+```
+
+#### Oppgave 2.10
+
+Tenk gjennom hvilke fordeler for-løkke metoden gir.
+
+<details><summary>Løsning Oppgave 2.10</summary>
+<p>
+
+- Umulig å vite hvor mange elementer som finnes i listen.
+- Tar mye plass. Lengden på koden multipliseres med antall elementer.
+- Dersom kalkulasjonen skal endres (for eksempel til `* 3`) må det endres i alle kopiene
+
+</p>
+</details>
+
+#### Oppgave 2.11
+
+Lag et program som skriver `100` vers av sangen _Fiskebollen lengter etter havet_.
+Bruk funksjonen `range()` for å generere en liste.
+
+```plaintext
+Fiskebollen lengter etter havet,
+for havet det er fiskebollens hjem!
+Dette var det 1. verset,
+nå er det bare 99 igjen...
+```
+
+<details><summary>Løsning Oppgave 2.11</summary>
+<p>
+
+```python
+for tall in range(1, 101):
+  print("Fiskebollen lengter etter havet,")
+  print("for havet det er fiskebollens hjem!")
+  print("Dette var det " + str(tall) + ". verset,")
+  print("nå er det bare " + str(100 - tall) + " igjen...")
+```
+
+</p>
+</details>
+
+#### Oppgave 2.12
+
+Lag et program som leser inn `5` tall fra brukeren, summerer de sammen og printer summen.
+
+<details><summary>Løsning Oppgave 2.12</summary>
+<p>
+
+```python
+sum = 0
+
+for i in range(1, 6):
+  tall = input("Skriv inn tall nr " + str(i) + ":")
+  sum += int(tall)
+
+print(sum)
+```
+
+</p>
+</details>
 
 <div style="page-break-after: always;"></div>
 
@@ -763,7 +876,7 @@ _Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne
 Et punkt har en x-koordinat og en y-koordinat. Vi kan dermed se på et punkt som en liste med to elementer
 
 ```python
-punkt = [2,2]
+punkt = [2, 2]
 ```
 
 Vi har lagd klar noen funksjoner for å enkelt plotte dataene.
@@ -786,10 +899,10 @@ Vi kan opprette en liste og legge til så mange punkter du orker.
 
 ```python
 punkter = []
-punkter.append([1,1])
-punkter.append([-1,10])
-punkter.append([5,7])
-punkter.append([3,2])
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
 
 plot_punkter(punkter)
 ```
@@ -819,8 +932,8 @@ Lag en liste med 10 punkter ved å bruke `.append()` og plot deretter punktene m
 Finn distansen mellom punktene
 
 ```python
-Punkt1 = [3,2]
-Punkt2 = [5,7]
+Punkt1 = [3, 2]
+Punkt2 = [5, 7]
 ```
 
 ved hjelp av Pytagoras. _Tips: Bruk `import math` og `math.sqrt()` for å finne roten_
@@ -831,10 +944,10 @@ ved hjelp av Pytagoras. _Tips: Bruk `import math` og `math.sqrt()` for å finne 
 ```python
 import math
 
-Punkt1 = [3,2]
-Punkt2 = [5,7]
+Punkt1 = [3, 2]
+Punkt2 = [5, 7]
 
-distanse = math.sqrt((Punkt1[0]-Punkt2[0])**2 + (Punkt1[1]-Punkt2[1])**2)
+distanse = math.sqrt((Punkt1[0] - Punkt2[0]) ** 2 + (Punkt1[1] - Punkt2[1]) ** 2)
 
 print(distanse)
 ```
@@ -863,7 +976,7 @@ antallPunkter = 16
 
 for x in range(0, antallPunkter):
   punkt = [math.sin(x / antallPunkter * 2 * math.pi),
-                math.cos(x / antallPunkter * 2 * math.pi)]
+           math.cos(x / antallPunkter * 2 * math.pi)]
   
   sirkelpunkter.append(punkt)
   
@@ -883,10 +996,10 @@ Bruker `plot_linje()`. Input er en liste med punkter.
 
 ```python
 punkter = []
-punkter.append([1,1])
-punkter.append([-1,10])
-punkter.append([5,7])
-punkter.append([3,2])
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
 
 plot_linje(punkter)
 ```
@@ -895,7 +1008,7 @@ plot_linje(punkter)
 
 [Linje]: ./images/linje.PNG
 
-**TODO**
+TODO
 
 #### Oppgave 3.2
 
@@ -919,10 +1032,10 @@ Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_
 
 ```python
 punkter = []
-punkter.append([1,1])
-punkter.append([-1,10])
-punkter.append([5,7])
-punkter.append([3,2])
+punkter.append([ 1,  1])
+punkter.append([-1, 10])
+punkter.append([ 5,  7])
+punkter.append([ 3,  2])
 
 plot_polygon(punkter)
 ```
@@ -1193,6 +1306,7 @@ Bonuspoeng: Lag tooltip med navnet på byen.
 ```python
 
 ```
+
 </p>
 </details>
 
