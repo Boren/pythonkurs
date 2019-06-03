@@ -1197,7 +1197,7 @@ _location_ er stedet kartet skal starte i når det åpnes. Denne verdien er en p
 
 ![Kart]
 
-[Kart]: ./images/kart.png
+[Kart]: ./images/kart.PNG
 
 Det er enkelt å legge til ekstra valg som for eksempel forskjellige basemaps og zoomnivåer ved hjelp av følgende valg:
 
@@ -1277,6 +1277,8 @@ print((breddegrad, lengdegrad))
 (59.91029353312019, 10.763368458155954)
 ```
 
+I tillegg til adresser fungerer det også å søke på stedsnavn og lignende.
+
 Vi kan også bruke en liste med adresser og ved hjelp av for-løkker geokode disse:
 
 ```python
@@ -1300,15 +1302,26 @@ På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning
 
 #### Oppgave 4.1.1
 
-Finn koordinatene til stedet du bor (eller et valgfritt annet sted) og print de.
+Finn koordinatene til en adresse i Norge ved å bruke geokoding. Opprett deretter et kart med koordinatene som ble funnet.
 
 <details><summary>Løsning Oppgave 4.1.1</summary>
 <p>
 
 ```python
+import folium
+
+
 breddegrad, lengdegrad = geokoding("<DIN ADRESSE>")
-print((breddegrad, lengdegrad))
+
+m = folium.Map(location=[breddegrad, lengdegrad],
+    tiles='openstreetmap',
+    zoom_start=16
+)
+
+m
 ```
+
+_Husk a tilpasse zoomnivået ditt basert på hva du søkte på_
 
 </p>
 </details>
@@ -1324,7 +1337,7 @@ TODO Oppgave med forløkke
 Det er enkelt å legge til egendefinerte markers med masse forskjellige valg.
 Dette gjøres ved hjelp av `folium.Marker()`.
 
-- popup (Her kan bruke HTML tags)
+- popup (Her kan man bruke HTML tags)
 - tooltip
 - icon
   - Folium bruker Font Awesome (<https://fontawesome.com/icons>)
