@@ -2,7 +2,7 @@
 
 ## Behandling av geografiske data i Python
 
-4 moduler. 8 timer totalt.
+4 moduler. 9 timer totalt.
 
 Kurset kommer til å gå relativt raskt for å rekke alt på en dag. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
 
@@ -24,7 +24,7 @@ Hva er jupyter notebooks? Hvilke fordeler gir det meg? Hvordan brukes de?
 
 Testkjøring av enkelt script og forklaring av hvordan python fungerer og tolker koden
 
-### 2. Programmeringskonsepter (2+ timer)
+### 2. Programmeringskonsepter (3 timer)
 
 #### Variabler
 
@@ -98,13 +98,11 @@ Legge inn enkle elementer i kartet og vise dem.
 - Støttet av de fleste store GIS verktøy
 - Python passerte nylig Java i popularitet og er nå #1
 
-(Vise noen bruksområder for Python i vår hverdag?)
-
 ## Jupyter Notebooks
 
 Jupyter Notebooks gir muligheten for å kjøre pythonkode direkte i nettleseren uten at du trenger å installere noe. Det gir også mulighter for en visuell fremstilling og endring av deler av koden kan gjøres fort. Det finnes flere måter å kjøre Jupyter Notebooks på.
 
-I dette kurset skal vi bruke **Google Colaboratory**.
+I dette kurset skal vi bruke **Google Colaboratory** som inneholder de aller meste du trenger av pakker. Det er enkelt å lagre og dele kode her.
 
 ### Opprett eget Jupytermiljø
 
@@ -185,12 +183,6 @@ print("verden!")
 </p>
 </details>
 
----
-
-Hvert kapittel vil ha en fasit med en Notebook som inneholder all koden.
-<https://colab.research.google.com/drive/1M0a-4eERWaMNPOXjTBMnRHs9xUKvHajq>
-Du kan trykke på _OPEN IN PLAYGROUND_ for å skrive og gjøre endringer selv. Du kan også bruke _File_ > _Save a copy..._ for å lagre Notebooken selv.
-
 <div style="page-break-after: always;"></div>
 
 ## Programmeringskonsepter
@@ -200,7 +192,6 @@ Denne modulen gjennomgår grunnleggende programmeringskonsepter.
 
 ### Variabler
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.1 Variabler`_
 En variabel er et sted hvor du kan lagre data for senere bruk.
 De gir oss og muligheten til å gi beskrivende navn til dataen vi lagrer.
 
@@ -239,8 +230,6 @@ print(etternavn)
 ---
 
 ### Datatyper
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.2 Datatyper`_
 
 Programmeringsspråk skiller mellom forskjellige typer data.
 Hovedtypene som blir brukt i python er:
@@ -360,7 +349,7 @@ print(alder)
 
 #### Oppgave 2.4
 
-Beregn og print ut hvor mange centimeter du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.3
+Beregn og print ut hvor mange *centimeter* du har igjen til 2 meter ved å bruke variablen `høyde` fra Oppgave 2.3
 
 <details><summary>Løsning Oppgave 2.4</summary>
 <p>
@@ -494,8 +483,6 @@ print(2 * tall)
 
 ### Lister
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.4 Lister`_
-
 Det kan noen ganger være lurt å lagre data i lister for å ha bedre struktur på dataene.
 
 Se for deg at du skal lage en oversikt over byer du har vært i.
@@ -590,8 +577,6 @@ Husk at Python har null-basert indeksering, så det sjette tallet er på indeks 
 ---
 
 ### Betingelser
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `2.5 Betingelser`_
 
 Betingelser er et av de viktigste konseptene å forstå.
 Det er heldigvis veldig enkelt og logisk i Python.
@@ -880,8 +865,6 @@ def plot_polygon(linje):
 
 ### Punkter
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.1 Punkter`_
-
 Et punkt har en x-koordinat og en y-koordinat. Vi kan dermed se på et punkt som en liste med to elementer
 
 ```python
@@ -925,7 +908,6 @@ _Husk at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 #### Oppgave 3.1.1
 
 Lag en liste med 8 punkter ved å bruke `.append()` slik at de tilsvarer hjørnene i en oktogon. Plot deretter punktene med `plot_punkter()`.
-
 
 <details><summary>Løsning Oppgave 3.1.1</summary>
 <p>
@@ -1069,8 +1051,6 @@ Siden dette er en sluttet krets, kan vi selvfølgelig starte i hvilket som helst
 
 ### Polygoner
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `3.3 Polygoner`_
-
 Et polygon beskrives av en liste med tre eller flere punkter. Ved bruk av `plot_polygon`:
 
 ```python
@@ -1200,8 +1180,6 @@ TODO Oppgave med forløkke
 
 ### Dynamiske kart med Folium
 
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.2 Dynamiske Kart`_
-
 For å vise kart skal vi bruke et hjelpebibliotek som heter `folium`. Dette baserer seg på `leaflet` som noen kanskje er kjent med.
 
 For å opprette et kart med folium trenger du bare skrive følgende:
@@ -1281,8 +1259,6 @@ m
 </details>
 
 ### Markers og Shapes
-
-_Dersom du henger etter eller trenger å rydde opp i filen din fort kan du åpne `4.3 Markers`_
 
 Det er enkelt å legge til egendefinerte markers med masse forskjellige valg.
 Dette gjøres ved hjelp av `folium.Marker()`.
