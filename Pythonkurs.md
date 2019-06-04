@@ -1498,14 +1498,14 @@ folium.Circle(
 
 #### Oppgave 4.3.1
 
-- Lag liste over byer i Norge du har besøkt.
+- Lag liste over noen byer i Norge du har besøkt.
   - Bruk geokoder for å finne koordinater.
   - Legg disse i ny liste.
 - Lag et kart med markers for alle byene.
 
 Bonus: Lag tooltip og popup med navnet på byen.
 
-<details><summary>Løsning Oppgave 4.3</summary>
+<details><summary>Løsning Oppgave 4.3.1</summary>
 <p>
 
 ```python
@@ -1574,6 +1574,35 @@ m
 
 ---
 
+#### Oppgave 4.3.2 (Vanskelig)
+
+Ta utgangspunkt i listen din over noen byer du har besøkt i Norge. Opprett også en ny (foreløbig) tom liste. Du skal så kunne skrive inn ny by (bruk _**input()**_). Skriv logikk med betingelser for
+
+```plaintext
+Hvis byen som ble skrevet inn er i bylisten:
+  Lag en grønn sirkel med radius 10km rundt byen
+Hvis byen ligger i den ny listen:
+  Lag en rød sirkel med radius 20km rundt byen
+Hvis byen ikke ligger i bylisten, og ikke i den nye listen:
+  Legg til byen i den nye listen
+  Lag en rød sirkel med radius 10km rundt byen
+```
+
+_Husk å bruke geokoder for å finne koordinatene når du trenger disse_
+
+Legg input-funksjonen og hele logikken inn i en for-løkke slik at det hele kjøres ti ganger.
+
+Vis deretter kartet.
+
+<details><summary>TODO Løsning Oppgave 4.3.2</summary>
+<p>
+
+```python
+```
+
+</p>
+</details>
+
 TODO oppgave med sirkler, for-løkker osv.
 Input med By, if den ligger i liste med byer allerede
 
@@ -1581,7 +1610,7 @@ Input med By, if den ligger i liste med byer allerede
 
 **EKSTRA HVIS TID**
 
-Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte.
+Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte som tekststreng.
 
 _NB! I GeoJSON brukes koordinater i omvendt rekkefølge (altså [lengdegrad, breddegrad])_
 
