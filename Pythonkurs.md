@@ -479,7 +479,7 @@ print(2 * tall)
 </p>
 </details>
 
-#### Oppgave 2.7
+#### Oppgave 2.7 (Vanskelig)
 
 Du jobber i en barnehage og ungene er veldig opptatt av at ting skal være rettferdig fordelt.
 Lag et program som leser inn antall barn og antall epler.
@@ -511,9 +511,9 @@ Du lagrer byene i variabler slik at det er lett å holde oversikt. _eller..._
 
 ```python
 by1 = "Oslo"
-by2 = "Stockholm"
-by3 = "Wien"
-by4 = "Berlin"
+by2 = "Bergen"
+by3 = "Trondheim"
+by4 = "Arendal"
 ...
 ```
 
@@ -522,21 +522,21 @@ Løsningen på problemet er å lagre dataene i en liste.
 _Legg gjerne inn byer du selv har besøkt_
 
 ```python
-byer = ["Oslo", "Stockholm", "Wien", "Berlin"]
+byer = ["Oslo", "Bergen", "Trondheim", "Arendal"]
 print(byer)
 ```
 
-`['Oslo', 'Stockholm', 'Wien', 'Berlin']`
+`['Oslo', 'Bergen', 'Trondheim', 'Arendal']`
 
 Dette gir og muligheten for enkelt å fjerne eller legge til byer i listen. Det kan gjøres ved hjelp av noen listefunksjoner som er innebygd i Python.
 
 ```python
-byer.append("Trondheim")
+byer.append("Grimstad")
 byer.remove("Oslo")
 print(byer)
 ```
 
-`['Stockholm', 'Wien', 'Berlin', 'Trondheim']`
+`['Bergen', 'Trondheim', 'Arendal', 'Grimstad']`
 
 Den innebygde funksjonen `len()` kan brukes på lister for å sjekke hvor mange objekter som ligger i listen. Vi kan sjekke hvor mange byer vi har besøkt ved å skrive
 
@@ -553,7 +553,7 @@ byer.sort()
 print(byer)
 ```
 
-`['Berlin', 'Stockholm', 'Trondheim', 'Wien']`
+`['Arendal', 'Bergen', 'Grimstad', 'Trondheim']`
 
 _En liste med tekstelementer vil bli sortert alfabetisk, mens en liste med tall blir sortert i stigende rekkefølge. ```.sort()``` vil ikke fungere i lister som er blandet._
 
@@ -564,7 +564,7 @@ førsteby = byer[0]
 print(førsteby)
 ```
 
-`Berlin`
+`Arendal`
 
 **NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
@@ -773,7 +773,7 @@ Tenk gjennom hvilke fordeler for-løkke metoden gir.
 </p>
 </details>
 
-#### Oppgave 2.11
+#### Oppgave 2.11 (Vanskelig)
 
 Lag et program som skriver `100` vers av sangen _Fiskebollen lengter etter havet_.
 Bruk funksjonen `range()` for å generere en liste.
