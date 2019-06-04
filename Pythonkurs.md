@@ -462,12 +462,12 @@ Etter at en linje som inneholder funksjonen har kjørt venter programmet på at 
 
 `input()` returnerer det brukeren oppgir som en streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
 
-#### Oppgave 2.6
+#### Oppgave 2.6.1
 
 1. Lag et inputfelt hvor brukeren skriver inn et tall (Hint: bruk `int()` sammen med `input()`).
 2. Print ut det dobbelte av tallet brukeren har oppgitt.
 
-<details><summary>Løsning Oppgave 2.6</summary>
+<details><summary>Løsning Oppgave 2.6.1</summary>
 <p>
 
 ```python
@@ -479,7 +479,7 @@ print(2 * tall)
 </p>
 </details>
 
-#### Oppgave 2.7 (Vanskelig)
+#### Oppgave 2.6.2 (Vanskelig)
 
 Du jobber i en barnehage og ungene er veldig opptatt av at ting skal være rettferdig fordelt.
 Lag et program som leser inn antall barn og antall epler.
@@ -487,7 +487,7 @@ Skriv ut hvor mange epler alle barna før og hvor mange som blir til overs derso
 
 Du kan bruke `//` istedenfor `/` for å få heltallsdivisjon.
 
-<details><summary>Løsning Oppgave 2.7</summary>
+<details><summary>Løsning Oppgave 2.6.2</summary>
 <p>
 
 ```python
@@ -1346,7 +1346,8 @@ m
 
 ### Geokoding
 
-Geokoding er en kjent del av GIS-hverdagen. Fordelen med Python og koding er at du kan automatisere geokoding av store datasett.
+Geokoding er en viktig del av GIS-hverdagen som går ut på å knytte sammen adresser/steder og koordinater. Fordelen med Python og koding er at du kan automatisere geokoding av store datasett.
+
 Vi har jukset litt og forhåndlaget en liten funksjon `geokoding()` som tar seg av arbeidet. Denne geokodingen vil kun fungere for steder i Norge.
 
 ```python
@@ -1433,7 +1434,7 @@ m
 </p>
 </details>
 
-TODO Oppgave med forløkke 
+TODO Oppgave med forløkke
 
 ---
 
