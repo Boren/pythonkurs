@@ -625,13 +625,15 @@ else:
   print("Du har ikke besøkt byen")
 ```
 
+Legg merke til at linjene som kommer etter `if` og `else` har et lite innrykk. Dette er for å vise at de tilhører `if` betingelsen.
+
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
 #### Oppgave 2.8
 
 1. Lag en liste over 3 land du har besøkt
-2. Lag en ny variabel med et land du har besøkt (Det kan være et land som ligger i listen, eller et nytt land)
-3. Skriv logikk for
+2. Les inn en navnet på et nytt land fra brukeren ved hjelp av `input()`
+3. Skriv følgende logikk:
 
 ```plaintext
 Hvis landet finnes i listen over land jeg har besøkt:
@@ -646,13 +648,51 @@ Dersom den ikke finnes:
 
 ```python
 land = ["Canada", "Brasil", "Italia"]
-nyttland = "Sveits"
+nyttland = input("Skriv inn land: ")
 
 if nyttland in land:
   print("Landet ligger allerede i listen")
 else:
   land.append(nyttland)
   print(land)
+```
+
+</p>
+</details>
+
+#### Oppgave 2.9 (Vanskelig)
+
+Du skal skrive et program som finner ut hvor mye en reisende skal betale i billettpris ut fra alderen til vedkommende.
+
+Ta utgangspunkt i følgende tabell:
+| Alder      | Pris   |
+|------------|--------|
+| Under 6 år | Gratis |
+| 6-12       | 25 kr  |
+| 13-17      | 35 kr  |
+| 18-66      | 45 kr  |
+| 67 og over | 30 kr  |
+
+Tips: Istedenfor å bruke masse [`if`](https://docs.python.org/3/tutorial/controlflow.html#if-statements) kan du bruke [`elif`](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
+
+Les inn alderen til brukeren ved hjelp av `input()`
+
+<details><summary>Løsningsforslag Oppgave 2.9</summary>
+<p>
+
+```python
+alder = int(input("Hvor gammel er du? "))
+
+if alder < 6:
+  print("Du slipper å betale")
+elif alder <= 12:
+  print("Du må betale 25 kr")
+elif alder <= 17:
+  print("Du må betale 35 kr")
+elif alder <= 66:
+  print("Du må betale 45 kr")
+else:
+  print("Du må betale 30 kr")
 ```
 
 </p>
@@ -702,6 +742,8 @@ print(talliste)
 
 </p>
 </details>
+
+---
 
 ### For-løkker
 
@@ -761,7 +803,7 @@ print(sum)
 
 #### Oppgave 2.10
 
-Tenk gjennom hvilke fordeler for-løkke metoden gir.
+Tenk gjennom og noter noen fordeler for-løkke metoden gir.
 
 <details><summary>Løsning Oppgave 2.10</summary>
 <p>
@@ -776,7 +818,7 @@ Tenk gjennom hvilke fordeler for-løkke metoden gir.
 #### Oppgave 2.11 (Vanskelig)
 
 Lag et program som skriver `100` vers av sangen _Fiskebollen lengter etter havet_.
-Bruk funksjonen `range()` for å generere en liste.
+Bruk funksjonen [`range()`](https://docs.python.org/3/library/stdtypes.html#range) for å generere en liste.
 
 ```plaintext
 Fiskebollen lengter etter havet,
@@ -799,7 +841,7 @@ for tall in range(1, 101):
 </p>
 </details>
 
-#### Oppgave 2.12
+#### Oppgave 2.12 (Vanskelig)
 
 Lag et program som leser inn `5` tall fra brukeren, summerer de sammen og printer summen.
 
