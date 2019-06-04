@@ -1163,7 +1163,7 @@ punkter.append([ 3,  2])
 plot_polygon(punkter)
 ```
 
-2. Siden polygoner er definert med hjørnene sine og linjene mellom disse, er de definert med omkretsen sin. Dersom linjen (omkretsen) endres ved å endre rekkefølgen på punktene vil også oplygonet endre seg. Man får to polygoner dersom man bruker en linje som krysser seg selv.
+2. Siden polygoner er definert med hjørnene sine og linjene mellom disse, er de definert med omkretsen sin. Dersom linjen (omkretsen) endres ved å endre rekkefølgen på punktene vil også polygonet endre seg. Man får to polygoner dersom man bruker en linje som krysser seg selv.
 
 ```python
 punkter = []
@@ -1286,8 +1286,6 @@ zoom_start - Zoomnivå
 Mulige Basemaps:
 
 - 'openstreetmap',
-- 'mapquestopen',
-- 'MapQuest Open Aerial',
 - 'Mapbox Bright',
 - 'Mapbox Control Room',
 - 'stamenterrain',
@@ -1325,11 +1323,17 @@ Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileL
 import folium
 
 m = folium.Map(location=[59.9103, 10.7634],
-    tiles='Stamen Toner',
+    tiles='stamenterrain',
     zoom_start=16
 )
 
 folium.TileLayer('openstreetmap').add_to(m)
+folium.TileLayer('MapBox Bright').add_to(m)
+folium.TileLayer('MapBox Control Room').add_to(m)
+folium.TileLayer('stamentoner').add_to(m)
+folium.TileLayer('stamenwatercolor').add_to(m)
+folium.TileLayer('cartodbpositron').add_to(m)
+folium.TileLayer('cartodbdark_matter').add_to(m)
 folium.LayerControl().add_to(m)
 
 m
