@@ -460,11 +460,11 @@ Etter at en linje som inneholder funksjonen har kjørt venter programmet på at 
 
 [InputCapture]:./images/InputCapture.JPG
 
-`input()` returnerer det man oppgir som streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
+`input()` returnerer det brukeren oppgir som en streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
 
 #### Oppgave 2.6
 
-1. Lag et inputfelt hvor brukeren skriver skal inn et tall (Hint: bruk `int()` sammen med `input()`).
+1. Lag et inputfelt hvor brukeren skriver inn et tall (Hint: bruk `int()` sammen med `input()`).
 2. Print ut det dobbelte av tallet brukeren har oppgitt.
 
 <details><summary>Løsning Oppgave 2.6</summary>
@@ -474,6 +474,27 @@ Etter at en linje som inneholder funksjonen har kjørt venter programmet på at 
 tallstreng = input("Skriv inn et tall: ")
 tall = int(tallstreng)
 print(2 * tall)
+```
+
+</p>
+</details>
+
+#### Oppgave 2.7
+
+Du jobber i en barnehage og ungene er veldig opptatt av at ting skal være rettferdig fordelt.
+Lag et program som leser inn antall barn og antall epler.
+Skriv ut hvor mange epler alle barna før og hvor mange som blir til overs dersom alle barna skal få et likt antall epler.
+
+Du kan bruke `//` istedenfor `/` for å få heltallsdivisjon.
+
+<details><summary>Løsning Oppgave 2.7</summary>
+<p>
+
+```python
+barn = int(input("Hvor mange sultne barn? "))
+epler = int(input("Hvor mange saftige epler? "))
+print("Hver barn får ", epler // barn, " eple")
+print("Det blir ", epler % barn, " til overs")
 ```
 
 </p>
