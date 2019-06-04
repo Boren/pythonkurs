@@ -968,6 +968,8 @@ _Husk at funksjonen nå heter `plot_punkter` og ikke `plot_punkt`_
 
 [Punkter]: ./images/punkter.png
 
+Denne typen geometri er ofte kjent som MultiPoint.
+
 #### Oppgave 3.1.1
 
 Lag en liste med 8 punkter ved å bruke `.append()` slik at de tilsvarer hjørnene i en oktogon. Plot deretter punktene med `plot_punkter()`.
@@ -976,7 +978,17 @@ Lag en liste med 8 punkter ved å bruke `.append()` slik at de tilsvarer hjørne
 <p>
 
 ```python
+punkter = []
+punkter.append([ 1,  2])
+punkter.append([ 2,  1])
+punkter.append([ 1,  3])
+punkter.append([ 3,  1])
+punkter.append([ 4,  2])
+punkter.append([ 2,  4])
+punkter.append([ 3,  4])
+punkter.append([ 4,  3])
 
+plot_punkter(punkter)
 ```
 
 </p>
@@ -1238,7 +1250,7 @@ def geokoding(søketekst: str, koordinatsystem = 4326):
 </p>
 </details>
 
-Fyll deretter inn brukernavn og passord.
+Fyll deretter inn brukernavn og passord (Det oppgis en testbruker under kurset).
 
 ---
 
@@ -1414,7 +1426,7 @@ Eksempel:
 folium.Marker(
     [59.9103, 10.7634],
     popup='Geodata AS',
-    tooltip='Geodata Tooltip',
+    tooltip='Dette er en Tooltip',
     icon=folium.Icon(color='red',icon='cloud'),
 ).add_to(m)
 
@@ -1425,6 +1437,7 @@ m
 
 [MarkerIcon]: ./images/icon.png
 
+Ikoner for markers på kartet kan man også gjøre mye selv på egenhånd. Blant annet kan man endre farge og
 Eksempel:
 
 `folium.Icon(color='lightgray', icon='step-backward', prefix='fa')`
@@ -1466,6 +1479,53 @@ Bonuspoeng: Lag tooltip med navnet på byen.
 </p>
 </details>
 
-**HVIS TID**
+---
+
+**EKSTRA HVIS TID**
+
+Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte.
+
+Eksempel:
+
+```python
+import folium
+m = folium.Map(location = [ 60.4, 5.3 ])
+folium.GeoJson("""{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ 5.3, 60.4 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [ 5.2, 60.4 ], [ 5.2, 60.3 ], [ 5.1, 60.4 ], [ 5.1, 60.3 ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [ 5.2, 60.2 ], [ 5.1, 60.15 ], [ 5.0, 60.2 ], [ 5.0, 60.3 ]
+          ]
+        ]
+      }
+    }
+  ]
+}""").add_to(m)
+m
+```
+
+---
+
 Plotting av linjer:
 <https://deparkes.co.uk/2016/06/03/plot-lines-in-folium/>
