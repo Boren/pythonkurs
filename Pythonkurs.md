@@ -1303,7 +1303,7 @@ Eksempel:
 ```python
 import folium
 m = folium.Map(location = [ 58.7692591, 5.6675446 ],
-               tiles = 'Stamen Terrain',
+               tiles = 'stamenterrain',
                zoom_start = 15)
 m
 ```
@@ -1391,8 +1391,7 @@ Finn koordinatene til en adresse i Norge ved å bruke geokoding. Opprett derette
 ```python
 import folium
 
-
-breddegrad, lengdegrad = geokoding("<DIN ADRESSE>")
+breddegrad, lengdegrad = geokoding("<SETT INN DIN ADRESSE>")
 
 m = folium.Map(location=[breddegrad, lengdegrad],
     tiles='openstreetmap',
@@ -1409,9 +1408,32 @@ _Husk a tilpasse zoomnivået ditt basert på hva du søkte på_
 
 #### Oppgave 4.1.2
 
-TODO Oppgave med forløkke 
 
-Inputfunksjon? "egen" geokoder som tar inn en adresse og returnerer et kart
+
+Bruk en _**input()**_ funksjon slik at man kan skrive inn et sted eller en adresse. Bruk geokoderen med det som du har oppgitt i input. Opprett deretter et kart med koordinatene fra geokoderen.
+
+<details><summary>Løsning Oppgave 4.1.2</summary>
+<p>
+
+```python
+import folium
+
+valgtsted = input("Gå til: ")
+
+koordinater = geokoding(valgtsted)
+
+m = folium.Map(location=koordinater,
+    tiles='openstreetmap',
+    zoom_start=12
+)
+
+m
+```
+
+</p>
+</details>
+
+TODO Oppgave med forløkke 
 
 ---
 
