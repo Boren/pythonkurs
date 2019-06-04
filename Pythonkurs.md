@@ -1026,9 +1026,8 @@ _Fungerer også med negative verdier i punkt-koordinatene._
 </p>
 </details>
 
-#### Oppgave 3.1.3
+#### Oppgave 3.1.3 (Vanskelig)
 
-Vanskelig bonusoppgave.
 Plot 16 punkter jevnt fordelt i en sirkel ved hjelp av en `for`-løkke.
 Tips: Bruk sinus (`math.sin`) og cosinus (`math.cos`) funksjonene i `math` biblioteket.
 
@@ -1146,10 +1145,13 @@ plot_polygon(punkter)
 
 #### Oppgave 3.3.1
 
-Lag en polygon med 4 hjørner, og plott den. Har rekkefølgen på punktene (hjørnene) noe å si? Opprett og plott to polygoner kun ved å endre rekkefølgen på punktene.
+1. Lag en polygon med 4 hjørner, og plott den. 
+2. Hvorfor har rekkefølgen på punktene (hjørnene) noe å si? Opprett og plott to polygoner kun ved å endre rekkefølgen på punktene.
 
 <details><summary>Løsning Oppgave 3.3.1</summary>
 <p>
+
+1.
 
 ```python
 punkter = []
@@ -1161,7 +1163,7 @@ punkter.append([ 3,  2])
 plot_polygon(punkter)
 ```
 
-Man får to polygoner dersom man bruker en linje som krysser seg selv.
+2. Siden polygoner er definert med hjørnene sine og linjene mellom disse, er de definert med omkretsen sin. Dersom linjen (omkretsen) endres ved å endre rekkefølgen på punktene vil også oplygonet endre seg. Man får to polygoner dersom man bruker en linje som krysser seg selv.
 
 ```python
 punkter = []
@@ -1176,9 +1178,9 @@ plot_polygon(punkter)
 </p>
 </details>
 
-#### Oppgave 3.3.2
+#### Oppgave 3.3.2 (Vanskelig)
 
-Speil de to polygonene om x-aksen ved hjelp av en for-løkke. _Tips: Speiling om x-aksen gjøres ved å endre fortegn i y-verdiene for hvert punkt_
+Speil de to polygonene fra forrige oppgave om x-aksen ved hjelp av en for-løkke. _Tips: Speiling om x-aksen gjøres ved å endre fortegn i y-verdiene for hvert punkt_
 
 <details><summary>Løsning Oppgave 3.3.2</summary>
 <p>
@@ -1352,7 +1354,7 @@ print((breddegrad, lengdegrad))
 (59.91029353312019, 10.763368458155954)
 ```
 
-I tillegg til adresser fungerer det også å søke på stedsnavn og lignende.
+I tillegg til adresser fungerer det også å søke på stedsnavn og lignende. Geokoding-funksjonen returnerer det første resulatet det finner, så det finnes tilfeller hvor den kan finne et sted du ikke forsøkte å finne hvis søketeksten er for generell.
 
 Vi kan også bruke en liste med adresser og ved hjelp av for-løkker geokode disse:
 
@@ -1377,7 +1379,7 @@ På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning
 
 #### Oppgave 4.1.1
 
-Finn koordinatene til en adresse i Norge ved å bruke geokoding. Opprett deretter et kart med koordinatene som ble funnet.
+Finn koordinatene til en adresse i Norge ved å bruke geokoding. Opprett deretter et kart med koordinatene som ble funnet. Verifiser at det var adressen du lette etter ved å se i kartet.
 
 <details><summary>Løsning Oppgave 4.1.1</summary>
 <p>
@@ -1390,7 +1392,7 @@ breddegrad, lengdegrad = geokoding("<DIN ADRESSE>")
 
 m = folium.Map(location=[breddegrad, lengdegrad],
     tiles='openstreetmap',
-    zoom_start=16
+    zoom_start=15
 )
 
 m
@@ -1403,7 +1405,9 @@ _Husk a tilpasse zoomnivået ditt basert på hva du søkte på_
 
 #### Oppgave 4.1.2
 
-TODO Oppgave med forløkke
+TODO Oppgave med forløkke 
+
+Inputfunksjon? "egen" geokoder som tar inn en adresse og returnerer et kart
 
 ---
 
@@ -1415,7 +1419,7 @@ Dette gjøres ved hjelp av `folium.Marker()`.
 - popup (Her kan man bruke HTML tags)
 - tooltip
 - icon
-  - Folium bruker Font Awesome (<https://fontawesome.com/icons>)
+  - Folium bruker Glyphicons (<https://getbootstrap.com/docs/3.3/components/>) som default. Kan bruke f.eks Font Awesome (<https://fontawesome.com/icons>) med _**prefix='fa'**_
   - Du kan sette egendefinert farge ved hjhelp av `color`
 
 For å faktisk legge markeren til i kartet bruker du følgende funksjon: `.add_to(m)`
@@ -1423,6 +1427,11 @@ For å faktisk legge markeren til i kartet bruker du følgende funksjon: `.add_t
 Eksempel:
 
 ```python
+import folium
+m = folium.Map(location=[59.9103, 10.7634],
+    tiles='openstreetmap',
+    zoom_start=15
+)
 folium.Marker(
     [59.9103, 10.7634],
     popup='Geodata AS',
@@ -1437,7 +1446,8 @@ m
 
 [MarkerIcon]: ./images/icon.png
 
-Ikoner for markers på kartet kan man også gjøre mye selv på egenhånd. Blant annet kan man endre farge og
+Ikoner for markers på kartet kan man også gjøre mye selv på egenhånd. Blant annet kan man endre farge og symbolet. _**prefix**_ definerer hvor symbolet kommer fra, _**fa**_ brukes for **Font Awesome**.
+
 Eksempel:
 
 `folium.Icon(color='lightgray', icon='step-backward', prefix='fa')`
@@ -1467,13 +1477,70 @@ folium.Circle(
   - Legg disse i ny liste.
 - Lag et kart med markers for alle byene.
 
-Bonuspoeng: Lag tooltip med navnet på byen.
+Bonus: Lag tooltip og popup med navnet på byen.
 
 <details><summary>Løsning Oppgave 4.3</summary>
 <p>
 
 ```python
+import folium
 
+m = folium.Map(location = [ 62, 6 ],
+              zoom_start = 4)
+
+byer = ["Oslo","Bergen","Trondheim","Stavanger"]
+koordinater = []
+
+for by in byer:
+    koordinater.append(geokoding(by))
+
+folium.Marker(
+    koordinater[0],
+    popup = 'Oslo',
+    tooltip = 'Oslo',
+    icon = folium.Icon(color='red',icon='map-marker'),
+).add_to(m)
+folium.Marker(
+    koordinater[1],
+    popup = 'Bergen',
+    tooltip = 'Bergen',
+    icon = folium.Icon(color='red',icon='map-marker'),
+).add_to(m)
+folium.Marker(
+    koordinater[2],
+    popup = 'Trondheim',
+    tooltip = 'Trondheim',
+    icon = folium.Icon(color='red',icon='map-marker'),
+).add_to(m)
+folium.Marker(
+    koordinater[3],
+    popup = 'Stavanger',
+    tooltip = 'Stavanger',
+    icon = folium.Icon(color='red',icon='map-marker'),
+).add_to(m)
+
+m
+```
+
+eller enda litt smartere
+
+```python
+import folium
+
+m = folium.Map(location = [ 62, 6 ],
+              zoom_start = 5)
+
+byer = ["Oslo","Bergen","Trondheim","Stavanger"]
+
+for by in byer:
+    folium.Marker(
+        geokoding(by),
+        popup = by,
+        tooltip = by,
+        icon = folium.Icon(color='red',icon='map-marker'),
+    ).add_to(m)
+
+m
 ```
 
 </p>
@@ -1481,9 +1548,16 @@ Bonuspoeng: Lag tooltip med navnet på byen.
 
 ---
 
+TODO oppgave med sirkler, for-løkker osv.
+Input med By, if den ligger i liste med byer allerede
+
+---
+
 **EKSTRA HVIS TID**
 
 Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte.
+
+_NB! I GeoJSON brukes koordinater i omvendt rekkefølge (altså [lengdegrad, breddegrad])_
 
 Eksempel:
 
