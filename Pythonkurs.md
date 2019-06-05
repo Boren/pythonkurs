@@ -158,7 +158,7 @@ Et forsøk kan for eksempel være:
 
 [SyntaxError]:./images/Error.JPG
 
-Kommer direkte med en knapp til _Stack Overflow_ (fungerer ikke som den skal akkurat nå?)
+Kommer direkte med en knapp til _Stack Overflow_ (Gjør Googlesøk på feilen)
 
 Enkelt vist ved første resultat (Google Syntax Erroren). Slike feilmedlinger vil komme dersom cellen krasjer av en eller annen grunn. Det betyr at en tom output ikke nødvendigvis betyr at koden ikke fungerte.
 
@@ -862,6 +862,8 @@ print(sum)
 </p>
 </details>
 
+---
+
 <div style="page-break-after: always;"></div>
 
 ## Geometri
@@ -932,7 +934,7 @@ def plot_polygon(linje):
 Et punkt har en x-koordinat og en y-koordinat. Vi kan dermed se på et punkt som en liste med to elementer
 
 ```python
-punkt = [2, 2]
+punkt = [ 2, 2]
 ```
 
 Vi har lagd klar noen funksjoner for å enkelt plotte dataene.
@@ -945,7 +947,7 @@ Du vil nå få opp en graf tilsvarende denne:
 
 ![Punkt]
 
-[Punkt]: ./images/punkt.png
+[Punkt]: ./images/punkt.PNG
 
 Det er mulig å legge inn flere punkt i samme graf. Å bruke `plot_punkt()` for hvert enkelt punkt vil resultere i en advarsel, og er veldig lite praktisk.
 
@@ -1000,8 +1002,8 @@ plot_punkter(punkter)
 Finn distansen mellom punktene
 
 ```python
-Punkt1 = [3, 2]
-Punkt2 = [5, 7]
+Punkt1 = [ 3, 2]
+Punkt2 = [ 5, 7]
 ```
 
 ved hjelp av Pytagoras. _Tips: Bruk `import math` og `math.sqrt()` for å finne roten_
@@ -1012,8 +1014,8 @@ ved hjelp av Pytagoras. _Tips: Bruk `import math` og `math.sqrt()` for å finne 
 ```python
 import math
 
-Punkt1 = [3, 2]
-Punkt2 = [5, 7]
+Punkt1 = [ 3, 2]
+Punkt2 = [ 5, 7]
 
 distanse = math.sqrt((Punkt1[0] - Punkt2[0]) ** 2 + (Punkt1[1] - Punkt2[1]) ** 2)
 
@@ -1311,13 +1313,13 @@ m
 
 **NB!** _Husk å importere folium før du går igang med oppgavene._
 
-#### Oppgave 4.2.1
+#### Oppgave 4.1
 
-Bruk en bredde- og lengdegraden som du fant til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og basemap.
+Bruk en bredde- og lengdegraden som du fant med `folium.LatLngPopup().add_to(m)` til å opprette et nytt kart og vis det i notebooken. Sett eget zoomnivå og velg et basemap som du liker.
 
 Bonus: Lag egen basemap-velger ved å legge til flere basemaps med `folium.TileLayer(SETT INN BASEMAP HER).add_to(m)` og `folium.LayerControl().add_to(m)`
 
-<details><summary>Løsning Oppgave 4.2.1</summary>
+<details><summary>Løsning Oppgave 4.1</summary>
 <p>
 
 ```python
@@ -1383,11 +1385,11 @@ print(koordinater)
 
 På denne måten kan vi enkelt plotte punktene i et kart ved en senere anledning.
 
-#### Oppgave 4.1.1
+#### Oppgave 4.2.1
 
 Finn koordinatene til en adresse i Norge ved å bruke geokoding. Opprett deretter et kart med koordinatene som ble funnet. Verifiser at det var adressen du lette etter ved å se i kartet.
 
-<details><summary>Løsning Oppgave 4.1.1</summary>
+<details><summary>Løsning Oppgave 4.2.1</summary>
 <p>
 
 ```python
@@ -1408,13 +1410,11 @@ _Husk a tilpasse zoomnivået ditt basert på hva du søkte på_
 </p>
 </details>
 
-#### Oppgave 4.1.2
-
-
+#### Oppgave 4.2.2
 
 Bruk en _**input()**_ funksjon slik at man kan skrive inn et sted eller en adresse. Bruk geokoderen med det som du har oppgitt i input. Opprett deretter et kart med koordinatene fra geokoderen.
 
-<details><summary>Løsning Oppgave 4.1.2</summary>
+<details><summary>Løsning Oppgave 4.2.2</summary>
 <p>
 
 ```python
@@ -1434,8 +1434,6 @@ m
 
 </p>
 </details>
-
-TODO Oppgave med forløkke
 
 ---
 
@@ -1650,9 +1648,11 @@ m
 
 ---
 
-**EKSTRA HVIS TID**
+_**EKSTRA HVIS TID**_
 
-Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte som tekststreng. En GeoJSON kan også komme fra en url.
+1. Lag din egen dynamiske kartapplikasjon ved hjelp av Notebooks og Folium.
+
+2. Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte som tekststreng. En GeoJSON kan også komme fra en url.
 
 _NB! I GeoJSON brukes koordinater i omvendt rekkefølge (altså [lengdegrad, breddegrad])_
 
@@ -1696,7 +1696,5 @@ folium.GeoJson("""{
 m
 ```
 
----
-
-Plotting av linjer:
+3. Plotting av linjer i Folium:
 <https://deparkes.co.uk/2016/06/03/plot-lines-in-folium/>
