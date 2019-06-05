@@ -8,7 +8,7 @@ Kurset kommer til å gå relativt raskt for å rekke alt på en dag. Det oppford
 
 Vi bruker forhåndsoppsatte jupyter notebooks i Google Colaboratory  for å gjøre oppstartsprosessen enkel. Dette gjør og at det på forhånd er installert moduler som kreves.
 
-Alle oppgavene og koden du skriver blir liggende i skyen på din egen Googlekonto slik at du kan jobbe videre med det etter fullført kurs. På slutten har vi og lagd ved noen lenker og instruksjoner til hvordan du kan komme igang på lokal maskin.
+Alle oppgavene og koden du skriver blir liggende i skyen på din egen Googlekonto slik at du kan jobbe videre med det etter fullført kurs.
 
 ---
 
