@@ -6,9 +6,9 @@
 
 Kurset kommer til å gå relativt raskt for å rekke alt på en dag. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
 
-Vi bruker forhåndsoppsatte jupyter notebooks for å gjøre oppstartsprosessen enkel. Dette gjør og at vi på forhånd kan installere modulene som kreves og legge inn startmaler til oppgaver.
+Vi bruker forhåndsoppsatte jupyter notebooks i Google Colaboratory  for å gjøre oppstartsprosessen enkel. Dette gjør og at det på forhånd er installert moduler som kreves.
 
-Alle oppgavene og koden du skriver blir liggende i skyen slik at du kan jobbe videre med det etter fullført kurs. På slutten har vi og lagd ved noen lenker og instruksjoner til hvordan du kan komme igang på lokal maskin.
+Alle oppgavene og koden du skriver blir liggende i skyen på din egen Googlekonto slik at du kan jobbe videre med det etter fullført kurs. På slutten har vi og lagd ved noen lenker og instruksjoner til hvordan du kan komme igang på lokal maskin.
 
 ---
 
@@ -1725,3 +1725,10 @@ m
 
 3. Plotting av linjer i Folium:
 <https://deparkes.co.uk/2016/06/03/plot-lines-in-folium/>
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## Sette opp Jupyter Notebooks lokalt
+
