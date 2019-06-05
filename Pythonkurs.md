@@ -188,7 +188,6 @@ print("verden!")
 ## Programmeringskonsepter
 
 Denne modulen gjennomgår grunnleggende programmeringskonsepter.
-Åpne filen `2 Programmeringskonsepter`
 
 ### Variabler
 
@@ -1218,7 +1217,7 @@ plot_polygon(punkter2)
 
 ## Kart med OpenStreetMap
 
-Åpne filen `4 Kart`, eller manuelt kopier geokoding funksjonene:
+Manuelt kopier geokoding funksjonene:
 
 <details><summary> Geokoding funksjoner </summary>
 <p>
