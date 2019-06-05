@@ -1499,6 +1499,8 @@ folium.Circle(
 
 [SirkelMarker]: ./images/sirkelmarker.png
 
+TODO Enkel oppgave om Circle
+
 #### Oppgave 4.3.1
 
 - Lag liste over noen byer i Norge du har besøkt.
@@ -1605,7 +1607,7 @@ import folium
 
 byliste = ["Oslo","Bergen","Trondheim","Stavanger"]
 nyliste = []
-m = folium.Map(location=koordinater,
+m = folium.Map(location=[62, 10],
     tiles='openstreetmap',
     zoom_start=5
 )
@@ -1646,14 +1648,11 @@ m
 </p>
 </details>
 
-TODO oppgave med sirkler, for-løkker osv.
-Input med By, if den ligger i liste med byer allerede
-
 ---
 
 **EKSTRA HVIS TID**
 
-Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte som tekststreng.
+Vise GeoJSON med Folium. Kan enten hente GeoJSON fra fil eller bruke direkte som tekststreng. En GeoJSON kan også komme fra en url.
 
 _NB! I GeoJSON brukes koordinater i omvendt rekkefølge (altså [lengdegrad, breddegrad])_
 
