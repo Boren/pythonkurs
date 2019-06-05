@@ -1225,8 +1225,8 @@ Manuelt kopier geokoding funksjonene:
 ```python
 import requests
 
-brukernavn = ""
-passord = ""
+brukernavn = "Geoforum"
+passord = "Python3!"
 # Henter token fra ArcGIS Server
 tokenparametre = {'username': brukernavn, 'password': passord, 'f': 'pjson', 'client': 'requestip'}
 tokenforespørsel = requests.get("https://services.geodataonline.no/arcgis/tokens/generateToken",
@@ -1253,8 +1253,6 @@ def geokoding(søketekst: str, koordinatsystem = 4326):
 
 </p>
 </details>
-
-Fyll deretter inn brukernavn og passord (Det oppgis en testbruker under kurset).
 
 ---
 
