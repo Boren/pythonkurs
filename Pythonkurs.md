@@ -629,7 +629,7 @@ Legg merke til at linjene som kommer etter `if` og `else` har et lite innrykk. D
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
-#### Oppgave 2.8
+#### Oppgave 2.8.1
 
 1. Lag en liste over 3 land du har besøkt
 2. Les inn en navnet på et nytt land fra brukeren ved hjelp av `input()`
@@ -643,7 +643,7 @@ Dersom den ikke finnes:
   Skriv ut listen over land
 ```
 
-<details><summary>Løsning Oppgave 2.8</summary>
+<details><summary>Løsning Oppgave 2.8.1</summary>
 <p>
 
 ```python
@@ -660,11 +660,12 @@ else:
 </p>
 </details>
 
-#### Oppgave 2.9 (Vanskelig)
+#### Oppgave 2.8.2 (Vanskelig)
 
 Du skal skrive et program som finner ut hvor mye en reisende skal betale i billettpris ut fra alderen til vedkommende.
 
 Ta utgangspunkt i følgende tabell:
+
 | Alder      | Pris   |
 |------------|--------|
 | Under 6 år | Gratis |
@@ -677,7 +678,7 @@ Tips: Istedenfor å bruke masse [`if`](https://docs.python.org/3/tutorial/contro
 
 Les inn alderen til brukeren ved hjelp av `input()`
 
-<details><summary>Løsningsforslag Oppgave 2.9</summary>
+<details><summary>Løsningsforslag Oppgave 2.8.2</summary>
 <p>
 
 ```python
@@ -1490,6 +1491,7 @@ folium.Circle(
     popup='Dette er en sirkel rundt Geodata AS',
     color='crimson',
     fill=True,
+    fill_color='crimson',
 ).add_to(m)
 ```
 
@@ -1595,10 +1597,50 @@ Legg input-funksjonen og hele logikken inn i en for-løkke slik at det hele kjø
 
 Vis deretter kartet.
 
-<details><summary>TODO Løsning Oppgave 4.3.2</summary>
+<details><summary>Løsning Oppgave 4.3.2</summary>
 <p>
 
 ```python
+import folium
+
+byliste = ["Oslo","Bergen","Trondheim","Stavanger"]
+nyliste = []
+m = folium.Map(location=koordinater,
+    tiles='openstreetmap',
+    zoom_start=5
+)
+for i in range(0,10):  
+  valgtsted = input("Gå til: ")
+  if (valgtsted in byliste):
+    folium.Circle(
+      radius=10000,
+      location=geokoding(valgtsted),
+      popup=valgtsted,
+      color='green',
+      fill=True,
+      fill_color='green',
+    ).add_to(m)
+  elif (valgtsted in nyliste):
+    folium.Circle(
+      radius=20000,
+      location=geokoding(valgtsted),
+      popup=valgtsted,
+      color='red',
+      fill=True,
+      fill_color='red',
+    ).add_to(m)
+  else:
+    nyliste.append(valgtsted)
+    folium.Circle(
+      radius=10000,
+      location=geokoding(valgtsted),
+      popup=valgtsted,
+      color='red',
+      fill=True,
+      fill_color='red',
+    ).add_to(m)
+
+m
 ```
 
 </p>
