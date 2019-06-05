@@ -947,7 +947,7 @@ Du vil nå få opp en graf tilsvarende denne:
 
 ![Punkt]
 
-[Punkt]: ./images/punkt.PNG
+[Punkt]: ./images/punkt.png
 
 Det er mulig å legge inn flere punkt i samme graf. Å bruke `plot_punkt()` for hvert enkelt punkt vil resultere i en advarsel, og er veldig lite praktisk.
 
