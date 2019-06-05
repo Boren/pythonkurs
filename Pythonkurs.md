@@ -1726,9 +1726,12 @@ m
 3. Plotting av linjer i Folium:
 <https://deparkes.co.uk/2016/06/03/plot-lines-in-folium/>
 
+4. Kahoot (felles)
+
 ---
 
 <div style="page-break-after: always;"></div>
 
 ## Sette opp Jupyter Notebooks lokalt
 
+<https://jupyter.readthedocs.io/en/latest/install.html>
