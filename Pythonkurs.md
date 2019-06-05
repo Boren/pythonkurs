@@ -1497,8 +1497,6 @@ folium.Circle(
 
 [SirkelMarker]: ./images/sirkelmarker.png
 
-TODO Enkel oppgave om Circle
-
 #### Oppgave 4.3.1
 
 - Lag liste over noen byer i Norge du har besøkt.
@@ -1575,9 +1573,39 @@ m
 </p>
 </details>
 
+#### Oppgave 4.3.2
+
+Besvar spørsmålene under ved prøving og feiling:
+
+1. Hva skjer dersom du legger en Marker og en Circle i samme punkt? Har rekkefølgen de legges til noe å si?
+2. Hva skjer dersom to sirkler overlapper?
+3. Hva er forskjellen mellom `color` og `fill_color` i Circle? Er det mulig å  bruke noe annet enn tekststrenger som `'red'` eller `'green'` til å definere farge?
+4. Hva har gått galt her?
+
+![Save]
+
+[Save]: ./images/Save.PNG
+
+<details><summary>Løsning Oppgave 4.3.2</summary>
+<p>
+
+1. Det går helt fint å legge begge deler i samme punkt. Begge vil vises. Rekkefølgen som de legges til i har ikke noe å si (Markers alltid øverst).
+2. To sirkler kan fint overlappe. Dersom begge har `fill=True` ser dette f.eks slikt ut: 
+    
+![ToSirkler]
+
+[ToSirkler]: ./images/ToSirkler.PNG
+
+3. `color` definerer kanten av sirkelen, `fill_color` alt som er inne i sirkelen. De to fargeverdiene kan godt være forskjellige fra hverandre. Default dersom du ikke setter noe farge er blå. Man kan sette hvilken som helst farge med HEX (f.eks `color='#c831e2'`) eller RGB (f.eks `color='rgb(200, 49, 226)'`).
+
+4. Jorden er rundt, og det er ikke så enkelt å tegne korrekte sirkler i en 2D Projeksjon. Vær forsiktig med veldig store sirkler, spesielt i Polarregionene.
+
+</p>
+</details>
+
 ---
 
-#### Oppgave 4.3.2 (Vanskelig)
+#### Oppgave 4.3.3 (Vanskelig)
 
 Ta utgangspunkt i listen din over noen byer du har besøkt i Norge. Opprett også en ny (foreløbig) tom liste. Du skal så kunne skrive inn ny by (bruk _**input()**_). Skriv logikk med betingelser for
 
@@ -1597,7 +1625,7 @@ Legg input-funksjonen og hele logikken inn i en for-løkke slik at det hele kjø
 
 Vis deretter kartet.
 
-<details><summary>Løsning Oppgave 4.3.2</summary>
+<details><summary>Løsning Oppgave 4.3.3</summary>
 <p>
 
 ```python
