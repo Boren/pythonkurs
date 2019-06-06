@@ -675,6 +675,13 @@ Ta utgangspunkt i følgende tabell:
 
 Tips: Istedenfor å bruke masse [`if`](https://docs.python.org/3/tutorial/controlflow.html#if-statements) kan du bruke [`elif`](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
 
+== - Er lik
+!= - Ikke lik
+< - Mindre enn
+> - Større enn
+<= - Mindre enn eller lik
+>= - Større enn eller lik
+
 Les inn alderen til brukeren ved hjelp av `input()`
 
 <details><summary>Løsningsforslag Oppgave 2.11</summary>
