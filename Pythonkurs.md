@@ -6,7 +6,7 @@
 
 Kurset kommer til å gå relativt raskt for å rekke alt på en dag. Det oppfordres til å eksperimentere på egenhånd dersom du ligger litt foran.
 
-Vi bruker forhåndsoppsatte jupyter notebooks i Google Colaboratory  for å gjøre oppstartsprosessen enkel. Dette gjør og at det på forhånd er installert moduler som kreves.
+Vi bruker forhåndsoppsatte jupyter notebooks i Google Colaboratory for å gjøre oppstartsprosessen enkel. Dette gjør og at det på forhånd er installert moduler som kreves.
 
 Alle oppgavene og koden du skriver blir liggende i skyen på din egen Googlekonto slik at du kan jobbe videre med det etter fullført kurs.
 
@@ -426,7 +426,7 @@ Funksjoner er et viktig konsept i Python og de fleste andre programmeringsspråk
 
 Vi har allerede brukt den innebygde `print()` funksjonen, med en input av det vi ønsker å printe. Man kan også lage og definere egne funksjoner. En enorm fordel med dette er at funksjonalitet på denne måten kan gjenbrukes, og kode som du ellers ville skrevet om og om igjen kan kalles med en enkel funksjon.
 
-#### Oppgave 2.5
+#### Oppgave 2.6
 
 Print `Året er: 2019` ved å:
 
@@ -434,7 +434,7 @@ Print `Året er: 2019` ved å:
 2. Bruke variabelen `årstall` fra Oppgave 2.3 og gjør den om til en tekststreng
 3. Legge sammen strengene, og printe disse
 
-<details><summary>Løsning Oppgave 2.5</summary>
+<details><summary>Løsning Oppgave 2.6</summary>
 <p>
 
 ```python
@@ -461,12 +461,12 @@ Etter at en linje som inneholder funksjonen har kjørt venter programmet på at 
 
 `input()` returnerer det brukeren oppgir som en streng. Viktig å gjøre om til andre datatyper manuelt dersom det er behov.
 
-#### Oppgave 2.6.1
+#### Oppgave 2.7
 
 1. Lag et inputfelt hvor brukeren skriver inn et tall (Hint: bruk `int()` sammen med `input()`).
 2. Print ut det dobbelte av tallet brukeren har oppgitt.
 
-<details><summary>Løsning Oppgave 2.6.1</summary>
+<details><summary>Løsning Oppgave 2.7</summary>
 <p>
 
 ```python
@@ -478,7 +478,7 @@ print(2 * tall)
 </p>
 </details>
 
-#### Oppgave 2.6.2 (Vanskelig)
+#### Oppgave 2.8 (Vanskelig)
 
 Du jobber i en barnehage og ungene er veldig opptatt av at ting skal være rettferdig fordelt.
 Lag et program som leser inn antall barn og antall epler.
@@ -486,7 +486,7 @@ Skriv ut hvor mange epler alle barna før og hvor mange som blir til overs derso
 
 Du kan bruke `//` istedenfor `/` for å få heltallsdivisjon.
 
-<details><summary>Løsning Oppgave 2.6.2</summary>
+<details><summary>Løsning Oppgave 2.8</summary>
 <p>
 
 ```python
@@ -567,14 +567,14 @@ print(førsteby)
 
 **NB!** _Python har null-basert indeksering, noe som betyr at det første elementet ligger på indeks [0], det andre elementet ligger på indeks [1] osv._
 
-#### Oppgave 2.7
+#### Oppgave 2.9
 
 1. Start med en tom liste ved å bruke `talliste = []`
 2. Legg til 10 forskjellige heltall mellom 0 og 100 ved bruk av `.append()`
 3. Print listen du har laget
 4. Finn ut hva det 6. laveste tallet i din liste er ved å sortere listen og bruke indekser
 
-<details><summary>Løsning Oppgave 2.7</summary>
+<details><summary>Løsning Oppgave 2.9</summary>
 <p>
 
 ```python
@@ -628,7 +628,7 @@ Legg merke til at linjene som kommer etter `if` og `else` har et lite innrykk. D
 
 Prøv å bytte ut `by` med en by du har besøkt og en du ikke har besøkt og se hvordan resultatet endrer seg.
 
-#### Oppgave 2.8.1
+#### Oppgave 2.10
 
 1. Lag en liste over 3 land du har besøkt
 2. Les inn en navnet på et nytt land fra brukeren ved hjelp av `input()`
@@ -642,7 +642,7 @@ Dersom den ikke finnes:
   Skriv ut listen over land
 ```
 
-<details><summary>Løsning Oppgave 2.8.1</summary>
+<details><summary>Løsning Oppgave 2.10</summary>
 <p>
 
 ```python
@@ -659,7 +659,7 @@ else:
 </p>
 </details>
 
-#### Oppgave 2.8.2 (Vanskelig)
+#### Oppgave 2.11 (Vanskelig)
 
 Du skal skrive et program som finner ut hvor mye en reisende skal betale i billettpris ut fra alderen til vedkommende.
 
@@ -677,7 +677,7 @@ Tips: Istedenfor å bruke masse [`if`](https://docs.python.org/3/tutorial/contro
 
 Les inn alderen til brukeren ved hjelp av `input()`
 
-<details><summary>Løsningsforslag Oppgave 2.8.2</summary>
+<details><summary>Løsningsforslag Oppgave 2.11</summary>
 <p>
 
 ```python
@@ -724,11 +724,11 @@ import math
 
 _*NB! Hvis bibloteket blir importert på denne måten brukes navnet på biblioteket foran: `math.pi`*_
 
-#### Oppgave 2.9
+#### Oppgave 2.12
 
 Importer funksjonaliteten `shuffle` fra biblioteket `random`. Deretter kan du bruke funksjonen `shuffle()`. Bruk denne til å stokke om listen med tall fra Oppgave 2.7
 
-<details><summary>Løsning Oppgave 2.9</summary>
+<details><summary>Løsning Oppgave 2.12</summary>
 <p>
 
 ```python
@@ -801,11 +801,11 @@ for tall in talliste:
 print(sum)
 ```
 
-#### Oppgave 2.10
+#### Oppgave 2.13
 
 Tenk gjennom og noter noen fordeler for-løkke metoden gir.
 
-<details><summary>Løsning Oppgave 2.10</summary>
+<details><summary>Løsning Oppgave 2.13</summary>
 <p>
 
 - Umulig å vite hvor mange elementer som finnes i listen.
@@ -815,7 +815,7 @@ Tenk gjennom og noter noen fordeler for-løkke metoden gir.
 </p>
 </details>
 
-#### Oppgave 2.11 (Vanskelig)
+#### Oppgave 2.14 (Vanskelig)
 
 Lag et program som skriver `100` vers av sangen _Fiskebollen lengter etter havet_.
 Bruk funksjonen [`range()`](https://docs.python.org/3/library/stdtypes.html#range) for å generere en liste.
@@ -827,7 +827,7 @@ Dette var det 1. verset,
 nå er det bare 99 igjen...
 ```
 
-<details><summary>Løsning Oppgave 2.11</summary>
+<details><summary>Løsning Oppgave 2.14</summary>
 <p>
 
 ```python
@@ -841,11 +841,11 @@ for tall in range(1, 101):
 </p>
 </details>
 
-#### Oppgave 2.12 (Vanskelig)
+#### Oppgave 2.15 (Vanskelig)
 
 Lag et program som leser inn `5` tall fra brukeren, summerer de sammen og printer summen.
 
-<details><summary>Løsning Oppgave 2.12</summary>
+<details><summary>Løsning Oppgave 2.15</summary>
 <p>
 
 ```python
